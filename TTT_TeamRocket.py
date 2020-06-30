@@ -19,6 +19,13 @@ def draw_board(board):
     print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
     print('   |   |')
     
+def difficulty_level():
+    difficulty = ''
+    while not (difficulty == 'l1' or difficulty == 'l2' or difficulty == 'l3' or difficulty == 'l4'):
+        print("Please enter a difficulty level: l1, l2, l3, or l4")
+        difficulty = input()
+    return difficulty
+
 def ChooseLetter():
     print("Choose X or O")
     letter = input().upper()
@@ -81,7 +88,7 @@ def Random_Move(board, moves): #This function randomly chooses a spot from the l
     else:
         return None
     
-def get_move(board, computer_letter,First_Player, turnNumber):
+def move_l4(board, computer_letter,First_Player, turnNumber):
     if computer_letter == 'X':
         players_letter = 'O'
     else:
@@ -96,6 +103,7 @@ def get_move(board, computer_letter,First_Player, turnNumber):
 
 
     # defend
+    for i in range(1, 10):
         copy = board_copy(board)
         make_move(copy, players_letter, i)
         if check_winner(copy, players_letter):
@@ -110,19 +118,87 @@ def get_move(board, computer_letter,First_Player, turnNumber):
         if move != None:
             return move
 
-
-
-   
+   #CORNER
     move = Random_Move(board, [7, 9, 1, 3])
     if move != None:
         return move
-   
+   #CENTRE
     if Space_Free(board, 5):
         return 5
 
-    # Take on of the sides. Using the choose random move from list function
+    # SIDES
     move = Random_Move(board, [2, 4, 6, 8])
     if move != None:
+        return move
+    
+def move_l1(board, computer_letter):
+    move = Random_Move(board, [1, 2, 3, 4, 5, 6, 7, 8, 9])
+    if move != None:
+        return move
+
+def move_l2(board, computer_letter):
+    if computer_letter == 'X':
+        players_letter = 'O'
+    else:
+        players_letter = 'X'
+
+    for i in range(1, 10):
+        copy = board_copy(board)
+        make_move(copy, computer_letter, i)
+        if check_winner(copy, computer_letter):
+            return i
+    #DEFEND
+    for i in range(1, 10):
+        copy = board_copy(board)
+        make_move(copy, players_letter, i)
+        if check_winner(copy, player_letter):
+            return i
+
+    move = Random_Move(board, [1, 2,3,4,5,6,7,8,9])
+    if move != None:
+        return move
+
+def move_l3(board, computer_letter):
+    if computer_letter == 'X':
+        players_letter = 'O'
+    else:
+        players_letter = 'X'
+
+    for i in range(1, 10):
+        copy = board_copy(board)
+        make_move(copy, computer_letter, i)
+        if check_winner(copy, computer_letter):
+            return i
+    #DEFEND
+    for i in range(1, 10):
+        copy = board_copy(board)
+        make_move(copy, players_letter, i)
+        if check_winner(copy, players_letter):
+            return i
+
+    move = Random_Move(board, [7, 9, 1, 3])
+    if move != None:
+        return move
+    # CENTRE
+    if Space_Free(board, 5):
+        return 5
+
+    move = Random_Move(board, [2,4,6,8])
+    if move != None:
+        return move
+
+def get_move(board, computerletter, theFirstPlayer, turnNumber, difficulty):
+    if difficulty == 'l1':
+        move = move_l1(board, computer_letter)
+        return move
+    if difficulty == 'l2':
+        move = move_l2(board, computer_letter)
+        return move
+    if difficulty == 'l3':
+        move = move_l3(board, computer_letter)
+        return move
+    if difficulty == 'l4':
+        move = move_l4(board, computer_letter, First_Player, turnNumber)
         return move
 
 
@@ -134,7 +210,7 @@ def board_full(board):
 print("Welcome!")
 
 while True:
-
+    difficulty = difficulty_level()
     board = [' '] * 10
     player_letter, computer_letter = ChooseLetter()
     turn = First()
@@ -168,7 +244,7 @@ while True:
 
         else:
             turnNumber += 1
-            move = get_move(board, computer_letter, First_Player, turnNumber)
+            move = get_move(board, computer_letter, First_Player, turnNumber, difficulty)
             make_move(board, computer_letter, move)
 
             if check_winner(board, computer_letter):
@@ -184,7 +260,6 @@ while True:
 
    
         #break
-
 
 # In[ ]:
 
