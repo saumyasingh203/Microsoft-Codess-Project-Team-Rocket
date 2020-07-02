@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+		Tic Tac Toe with Minimax AI Algorithm
+		-->
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="tic-tac-toe.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <script type= src="script.js"></script>
+    <title>Saumya Singh - Microsoft Assignment 1</title>
+</head>
+
+<body>
+    <header>
+        Tic-Tac-Toe <br>Minimax Algorithm
+    </header>
+    <br />
+    <p id="message"></p>
+    <br />
+    <table id="tab-tic-tac-toe" cellspacing="0">
+        <tr>
+            <td id="00" onclick="clickedCell(this)"></td>
+            <td id="01" onclick="clickedCell(this)"></td>
+            <td id="02" onclick="clickedCell(this)"></td>
+        </tr>
+        <tr>
+            <td id="10" onclick="clickedCell(this)"></td>
+            <td id="11" onclick="clickedCell(this)"></td>
+            <td id="12" onclick="clickedCell(this)"></td>
+        </tr>
+        <tr>
+            <td id="20" onclick="clickedCell(this)"></td>
+            <td id="21" onclick="clickedCell(this)"></td>
+            <td id="22" onclick="clickedCell(this)"></td>
+        </tr>
+    </table>
+    <br><br>
+    <input type="button" value="Start AI" id="bnt-restart" onclick="restartBnt(this)" />
+    <br />
+    <footer>
+        <p><a href="https://github.com/saumyasingh203">Visit my Github Profile</a>💖</p>
+    </footer>
+</body>
+
+</html>
