@@ -51,10 +51,6 @@ function gameOver(state, player) {
     return false;
 }
 
-/* This function test if the human or computer wins */
-function gameOverAll(state) {
-    return gameOver(state, HUMAN) || gameOver(state, COMP);
-}
 
 function emptyCells(state) {
     var cells = [];
