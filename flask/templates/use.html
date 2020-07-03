@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+		Tic Tac Toe with Minimax AI Algorithm
+		-->
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="tic-tac-toe.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="static/css/style.css" />
+    <script type= src="script.js"></script>
+    <title>Saumya Singh - Microsoft Assignment 1</title>
+
+    
+</head>
+
+
+<body>
+    <header>
+        Tic-Tac-Toe <br>Minimax Algorithm
+    </header>
+    <br />
+    <p id="message"></p>
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type=text/javascript>
+		$(function() {
+			 $('a#num-1').bind('click', function() {
+				$.getJSON('/background_process', {
+				  
+				}, function(data) {
+				  $("#result").text(data.result);
+				});
+				return false;
+			  });
+			});
+		</script>
+    
+
+    <br />
+    <table id="tab-tic-tac-toe" cellspacing="0">
+        <tr>
+            <td id="00" onclick="clickedCell(this)">
+            <a href=# id=num-1><button class='btn btn-default'>first</button></a>
+            <p id=result></p>
+            </td>
+            <td id="01" onclick="clickedCell(this)"></td>
+            <td id="02" onclick="clickedCell(this)"></td>
+        </tr>
+        <tr>
+            <td id="10" onclick="clickedCell(this)"></td>
+            <td id="11" onclick="clickedCell(this)"></td>
+            <td id="12" onclick="clickedCell(this)"></td>
+        </tr>
+        <tr>
+            <td id="20" onclick="clickedCell(this)"></td>
+            <td id="21" onclick="clickedCell(this)"></td>
+            <td id="22" onclick="clickedCell(this)"></td>
+        </tr>
+    </table>
+    <br><br>
+  
+    <!input type="button" value="Start AI" id="bnt-restartz" onclick="restartBnt(this)" />
+    <!a href=# id=bnt-restart><button class='btn btn-default'>Start AI</button></a>
+    <br /> 
+    <script src="/static/scripts.js" charset="utf-8"></script>
+
+</body>
+
+</html>
