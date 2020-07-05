@@ -88,6 +88,14 @@ a:visited {
 	width: 95px;
 }
 
+.first-button{
+	cursor: pointer;
+	height: 95px;
+	width: 95px;
+	border: none;
+	visibility: hidden;
+}
+
 #tab-tic-tac-toe td:hover {
 	background: #ECECEC;
 }
