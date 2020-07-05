@@ -197,11 +197,11 @@ function clickedCell(cell) {
         }
 
         msg = document.getElementById("message");
-        msg.innerHTML = "Oops, You Lose!";
+        msg.innerHTML = "You lose!";
     }
     if (emptyCells(board).length == 0 && !gameOverAll(board)) {
         var msg = document.getElementById("message");
-        msg.innerHTML = "It's a Draw!";
+        msg.innerHTML = "Draw!";
     }
     if (gameOverAll(board) == true || emptyCells(board).length == 0) {
         button.value = "Restart";
