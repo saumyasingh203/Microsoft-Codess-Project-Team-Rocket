@@ -97,6 +97,18 @@ a:visited {
 	visibility: hidden;
 }
 
+.level-button{
+	font-family: 'Balsamiq Sans', cursive;
+	font-size: 1em;
+	background-color: #F8F8F8;
+	cursor: pointer;
+	height: 90px;
+	width: 60px;
+	border: none;
+}
+
+
+
 #tab-tic-tac-toe td:hover {
 	background: #ECECEC;
 }
