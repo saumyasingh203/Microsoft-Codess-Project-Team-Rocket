@@ -19,10 +19,11 @@
 
 
 <body>
-    <header>
+
+  <div id="mainBox">
+    <div id="header">
         Tic-Tac-Toe <br>Microsoft Team : ROCKET
-    </header>
-    <br />
+    </div>
     <p id="message"></p>
    
     <script type=text/javascript>
@@ -38,8 +39,6 @@
 			});
 		</script>
 
-
-    <br />
     <table id="tab-tic-tac-toe" cellspacing="0">
         <tr>
             <td id="00" onclick="clickedCell(this)">
@@ -59,12 +58,33 @@
             <td id="21" onclick="clickedCell(this)"></td>
             <td id="22" onclick="clickedCell(this)"><a href=# id=num-1><button class="common-button">first</button></a></td>
         </tr>
+        <br>
+        <br>
     </table>
-    <br><br>
+    <div>
+    <a href=# id="bnt-restart"><button class="button1">AI Start</button></a>
+    </div>
+</div>
 
+      <div id="sideCol">
+        <div id="sideHeader">
+          <span id="sideHeaderText">Tic-Tac-Toe </span>
+        </div>
+        <div class="levelSelect">Choose your Level
+          <table id="levels">
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>MAX</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+   
     
-    <a href=# id="bnt-restart"><button class="button1">Start AI</button></a>
-        <br />
+  
        
 
 </body>
