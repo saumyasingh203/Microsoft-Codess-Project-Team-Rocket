@@ -19,18 +19,17 @@ body {
 	position: relative;
 	width: 100%;
 }
-
-p {
-	font-size: 14pt;
-	font-weight: bold;
-	font-family: Sans;
+.win-message{
+	font-family: 'Balsamiq Sans', cursive;
+	font-size: 25px;
+	color: black;
 	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 0px;
 	position: relative;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
+	width: 100%;
 }
+
 
 a {
 	font-family: 'Balsamiq Sans', cursive;
@@ -49,7 +48,7 @@ a:visited {
 /* ****************** Table style ****************** */
 #tab-tic-tac-toe {
 	float: right;
-	margin-top: 100px;
+	margin-top: 0px;
 	margin-right: 250px;
 	padding: 5px;
 	font-size: 4em;
@@ -102,15 +101,15 @@ a:visited {
 	font-size: 1em;
 	background-color: #F8F8F8;
 	cursor: pointer;
-	height: 90px;
-	width: 60px;
+	height: 95px;
+	width: 69px;
 	border: none;
 }
 
 
 
 #tab-tic-tac-toe td:hover {
-	background: #ECECEC;
+	background: #ececec;
 }
 
 /* ****************** Restart Button ****************** */
@@ -129,10 +128,7 @@ a:visited {
 	background: #CECECE;
 }
 
-#message{
-	font-family: 'Balsamiq Sans', cursive;
-	font-size: 1.25rem;
-}
+
 
 
 
@@ -143,7 +139,7 @@ a:visited {
 .button1{
 	
 	display: block;
-	margin-top: 500px;
+	margin-top: 370px;
 	margin-left: 300px;
 	width: 200px;
 	background: #00AEEA;
@@ -309,4 +305,8 @@ a:visited {
 	cursor: pointer;
 	height: 95px;
 	width: 95px;
+}
+
+.level-button:hover {
+	background: #ececec;
 }

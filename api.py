@@ -14,7 +14,7 @@ def home():
 
 @app.route('/background_process')
 def background_process():
-    return jsonify(result="X")
+    return jsonify(result="12")
 
 if __name__ == '__main__':
     app.run(debug=True)
