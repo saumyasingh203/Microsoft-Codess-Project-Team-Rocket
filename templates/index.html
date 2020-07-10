@@ -29,19 +29,21 @@
    
     <script type=text/javascript>
       $(function() {
-        $('a#num-00').bind('click', function() {
-          $.getJSON('/background_process', {}, 
-            function(data) 
-            {
-                for (var i = 0; i < 8; i++) {
-                  for (var j = 0; j < 3; j++) {
-                    $("a#num-" + String(i)+ String(j)).text(data.result);
-                  }
-                }
-            });
-            return false;
-          });
+			 $('a#num-1').bind('click', function() {
+                               
+				 $.getJSON('/number1', {
+                                         
+                                            
+       }, function(data) 
+        {                      
+                                for(var i=0;i<8;i++){
+                                 $("a#num-"+ String(i)).text(data.result[i]);
+                                }
+				});
+				return false;
+			  });
 			});
+
 		</script>
 
     <table id="tab-tic-tac-toe" cellspacing="0">
