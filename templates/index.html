@@ -29,70 +29,38 @@
    
     <script type=text/javascript>
       $(function() {
-<<<<<<< HEAD
-        $('a#num-00,a#num-01,a#num-02,a#num-10,a#num-11,a#num-12,a#num-,a#num-00,a#num-00').bind('click', function() {
-          $.getJSON('/background_process', {}, 
-            function(A) 
-            {
-                for (var i = 0; i < 3; i++) {
-                  for (var j = 0; j < 3; j++) {
-                    $("a#num-" + String(i)+ String(j)).text(A[i][j]);
-                  }
-                }
-            });
-            return false;
-          });
-=======
-			 $('a#num-1,a#num-2,a#num-3,a#num-4,a#num-5,a#num-6,a#num-7,a#num-8,a#num-9').bind('click', function() {
+			 $('a#num-0,a#num-1,a#num-2,a#num-3,a#num-4,a#num-5,a#num-6,a#num-7,a#num-8').bind('click', function() {
                                
-				 $.getJSON('/number1', {
-                                         
+				 $.getJSON('/number1', {                   
                                             
        }, 
        function(data) 
-      {                      
-        for(var i=1;i<=9;i++){
-          $("a#num-"+ String(i)).text(data.result[i]);
-        }
-      });
+        {                      
+          for(var i=0;i<9;i++){
+            $("a#num-"+ String(i)).text(data.result[i]);
+          }
+				});
 				return false;
 			  });
->>>>>>> origin/master
 			});
 
 		</script>
 
     <table id="tab-tic-tac-toe" cellspacing="0">
         <tr>
-<<<<<<< HEAD
-            <td><a href=# id=num-00><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-01><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-02><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-0><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-1><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-2><button class="common-button">first</button></a></td>
         </tr>
         <tr>
-            <td><a href=# id=num-10><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-11><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-12><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-3><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-4><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-5><button class="common-button">first</button></a></td>
         </tr>
         <tr>
-            <td><a href=# id=num-20><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-21><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-22><button class="common-button">first</button></a></td>
-=======
-            <td><a href=# id=num-1><button class="common-button">button</button></a></td>
-            <td><a href=# id=num-2><button class="common-button">button</button></a></td>
-            <td><a href=# id=num-3><button class="common-button">button</button></a></td>
-        </tr>
-        <tr>
-            <td><a href=# id=num-4><button class="common-button">button</button></a></td>
-            <td><a href=# id=num-5><button class="common-button">button</button></a></td>
-            <td><a href=# id=num-6><button class="common-button">button</button></a></td>
-        </tr>
-        <tr>
-            <td><a href=# id=num-7><button class="common-button">button</button></a></td>
-            <td><a href=# id=num-8><button class="common-button">button</button></a></td>
-            <td><a href=# id=num-9><button class="common-button">button</button></a></td>
->>>>>>> origin/master
+            <td><a href=# id=num-6><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-7><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-8><button class="common-button">first</button></a></td>
         </tr>
         <br>
         <br>
