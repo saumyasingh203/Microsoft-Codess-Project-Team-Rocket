@@ -1,45 +1,11 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import random
+from flask import Flask, request, render_template, jsonify
 
-def draw_board(board):
-    print('   |   |')
-    print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
-    print('   |   |')
-    print('-----------')
-    print('   |   |')
-    print(' ' + board[4] + ' | ' + board[5] + ' | ' + board[6])
-    print('   |   |')
-    print('-----------')
-    print('   |   |')
-    print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
-    print('   |   |')
-    
-def difficulty_level():
-    difficulty = ''
-    while not (difficulty == 'l1' or difficulty == 'l2' or difficulty == 'l3' or difficulty == 'l4'):
-        print("Please enter a difficulty level: l1, l2, l3, or l4")
-        difficulty = input()
-    return difficulty
+board = [' '] * 10
 
 def ChooseLetter():
-    print("Choose X or O")
-    letter = input().upper()
+    return ['X', 'O']
 
-    if letter == 'X':
-        return ['X', 'O']
-    else:
-        return ['O', 'X']
-
-def First():
-    if random.randint(0, 1) == 0:
-        return 'computer'
-    else:
-        return 'player'
 
 def make_move(board, letter, move):
     if Space_Free(board, move):#?
@@ -71,7 +37,7 @@ def Space_Free(board, move):
         return False
     
 def Player_Move(board):
-    print ("Choose a place")
+    #print ("Choose a place")
     move = 0
     while not (move > 0 and move < 10) or not Space_Free(board, move):
         move = int(input())
@@ -88,7 +54,7 @@ def Random_Move(board, moves): #This function randomly chooses a spot from the l
     else:
         return None
     
-def move_l4(board, computer_letter,First_Player, turnNumber):
+def get_move(board, computer_letter,First_Player, turnNumber):
     if computer_letter == 'X':
         players_letter = 'O'
     else:
@@ -187,7 +153,7 @@ def move_l3(board, computer_letter):
     if move != None:
         return move
 
-def get_move(board, computerletter, theFirstPlayer, turnNumber, difficulty):
+def get_move_draft(board, computerletter, theFirstPlayer, turnNumber, difficulty):
     if difficulty == 'l1':
         move = move_l1(board, computer_letter)
         return move
@@ -207,19 +173,14 @@ def board_full(board):
         if Space_Free(board, i):
             return False
     return True
-print("Welcome!")
 
-while True:
-    difficulty = difficulty_level()
-    board = [' '] * 10
+
+
+def ttt(place):    
+#<check if board is empty and then run the following functions:>
     player_letter, computer_letter = ChooseLetter()
-    turn = First()
+    turn = 'player'
     First_Player = turn
-   
-    if turn == 'player':
-        print ("Play")
-    else:
-        print ("The computer plays first")
     game_is_playing = True
     turnNumber = 0
 
@@ -227,8 +188,7 @@ while True:
     
     while game_is_playing:
         if turn == 'player':
-            draw_board(board)
-            move = Player_Move(board)
+            move = place
             make_move(board, player_letter, move)
 
             if check_winner(board, player_letter):
@@ -244,7 +204,7 @@ while True:
 
         else:
             turnNumber += 1
-            move = get_move(board, computer_letter, First_Player, turnNumber, difficulty)
+            move = get_move(board, computer_letter, First_Player, turnNumber)
             make_move(board, computer_letter, move)
 
             if check_winner(board, computer_letter):
@@ -257,12 +217,62 @@ while True:
                 game_is_playing = False
             else:
                 turn = 'player'
+                return(board)
 
-   
+
         #break
+        
+app = Flask(__name__)
 
-<<<<<<< HEAD
-# In[ ]:
-=======
-# In[ ]:
->>>>>>> origin/master
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+@app.route('/number1', methods = ['GET','POST'])
+def number1():
+    answer=ttt(1)
+    return jsonify(result=answer)
+
+@app.route('/number2', methods = ['GET','POST'])
+def number2():
+    answer=ttt(2)
+    return jsonify(result=answer)
+
+@app.route('/number3', methods = ['GET','POST'])
+def number3():
+    answer=ttt(3)
+    return jsonify(result=answer)
+
+@app.route('/number4', methods = ['GET','POST'])
+def number4():
+    answer=ttt(4)
+    return jsonify(result=answer)
+
+@app.route('/number5', methods = ['GET','POST'])
+def number5():
+    answer=ttt(5)
+    return jsonify(result=answer)
+
+@app.route('/number6', methods = ['GET','POST'])
+def number6():
+    answer=ttt(6)
+    return jsonify(result=answer)
+
+@app.route('/number7', methods = ['GET','POST'])
+def number7():
+    answer=ttt(7)
+    return jsonify(result=answer)
+
+@app.route('/number8', methods = ['GET','POST'])
+def number8():
+    answer=ttt(8)
+    return jsonify(result=answer)
+
+@app.route('/number9', methods = ['GET','POST'])
+def number9():
+    answer=ttt(9)
+    return jsonify(result=answer)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+   
