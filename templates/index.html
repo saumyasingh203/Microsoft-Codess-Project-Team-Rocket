@@ -29,16 +29,16 @@
    
     <script type=text/javascript>
       $(function() {
-			 $('a#num-1').bind('click', function() {
+			 $('a#num-0,a#num-1,a#num-2,a#num-3,a#num-4,a#num-5,a#num-6,a#num-7,a#num-8').bind('click', function() {
                                
-				 $.getJSON('/number1', {
-                                         
+				 $.getJSON('/number1', {                   
                                             
-       }, function(data) 
+       }, 
+       function(data) 
         {                      
-                                for(var i=0;i<8;i++){
-                                 $("a#num-"+ String(i)).text(data.result[i]);
-                                }
+          for(var i=0;i<9;i++){
+            $("a#num-"+ String(i)).text(data.result[i]);
+          }
 				});
 				return false;
 			  });
@@ -48,19 +48,19 @@
 
     <table id="tab-tic-tac-toe" cellspacing="0">
         <tr>
-            <td><a href=# id=num-00><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-01><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-02><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-0><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-1><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-2><button class="common-button">first</button></a></td>
         </tr>
         <tr>
-            <td><a href=# id=num-10><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-11><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-12><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-3><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-4><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-5><button class="common-button">first</button></a></td>
         </tr>
         <tr>
-            <td><a href=# id=num-20><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-21><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-22><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-6><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-7><button class="common-button">first</button></a></td>
+            <td><a href=# id=num-8><button class="common-button">first</button></a></td>
         </tr>
         <br>
         <br>
@@ -77,10 +77,10 @@
         <div class="levelSelect">Choose your Level
           <table id="levels">
             <tr>
-              <td><a href=# id=num-1><button class="level-button">1</button></a></td>
-              <td><a href=# id=num-1><button class="level-button">2</button></a></td>
-              <td><a href=# id=num-1><button class="level-button">3</button></a></td>
-              <td><a href=# id=num-1><button class="level-button">MAX</button></a></td>
+              <td><a href=# id=level-1><button class="level-button">1</button></a></td>
+              <td><a href=# id=level-2><button class="level-button">2</button></a></td>
+              <td><a href=# id=level-3><button class="level-button">3</button></a></td>
+              <td><a href=# id=level-4><button class="level-button">MAX</button></a></td>
             </tr>
           </table>
         </div>
