@@ -28,17 +28,15 @@
     <p id="message" class="win-message">You Won</p>
    
     <script type=text/javascript>
-		$(function() {
-			 $('a#num-1').bind('click', function() {
-				$.getJSON('/background_process', {
-				  
-        }, 
-        function(data) 
-        {
-				    $("a#num-" + String(data.result)).text(data.result);
-				});
-				return false;
-			  });
+      $(function() {
+        $('a#num-1').bind('click', function() {
+          $.getJSON('/background_process', {}, 
+            function(data) 
+            {
+                $("a#num-" + String(data.result)).text(data.result);
+            });
+            return false;
+          });
 			});
 		</script>
 
