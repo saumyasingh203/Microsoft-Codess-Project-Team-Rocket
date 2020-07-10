@@ -1,4 +1,7 @@
 from flask import Flask, request, render_template,jsonify
+A = ( [2, 5, 7],
+      [4, 7, 9],
+      [7, 8, ""] )
 
 app = Flask(__name__)
 
@@ -14,7 +17,7 @@ def home():
 
 @app.route('/background_process')
 def background_process():
-    return jsonify(result="12")
+    return jsonify(A)
 
 if __name__ == '__main__':
     app.run(debug=True)

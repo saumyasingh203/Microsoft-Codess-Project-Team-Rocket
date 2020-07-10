@@ -29,13 +29,13 @@
    
     <script type=text/javascript>
       $(function() {
-        $('a#num-00').bind('click', function() {
+        $('a#num-00,a#num-01,a#num-02,a#num-10,a#num-11,a#num-12,a#num-,a#num-00,a#num-00').bind('click', function() {
           $.getJSON('/background_process', {}, 
-            function(data) 
+            function(A) 
             {
-                for (var i = 0; i < 8; i++) {
+                for (var i = 0; i < 3; i++) {
                   for (var j = 0; j < 3; j++) {
-                    $("a#num-" + String(i)+ String(j)).text(data.result);
+                    $("a#num-" + String(i)+ String(j)).text(A[i][j]);
                   }
                 }
             });

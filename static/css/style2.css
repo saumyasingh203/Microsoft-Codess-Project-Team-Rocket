@@ -1,0 +1,10 @@
+/**********************************MAIN.HTML***************************************************** */
+
+.main-root{
+	margin-top: 0px;
+	box-shadow:3px 4px 3px rgba(0, 0, 0, 0.25);
+	opacity:1;
+	width: 1024px;
+	height: 900px;
+	background-color: blueviolet;
+}
