@@ -226,7 +226,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('main.html')
 
 @app.route('/number1', methods = ['GET','POST'])
 def number1():
