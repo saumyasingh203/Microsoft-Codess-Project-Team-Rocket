@@ -228,6 +228,10 @@ app = Flask(__name__)
 def home():
     return render_template('main.html')
 
+@app.route('/index', methods=['GET','POST'])
+def play():
+    return render_template('index.html')
+
 @app.route('/number1', methods = ['GET','POST'])
 def number1():
     answer=ttt(1)

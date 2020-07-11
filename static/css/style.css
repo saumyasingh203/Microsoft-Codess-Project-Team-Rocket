@@ -115,22 +115,6 @@ a:visited {
 /* ****************** Restart Button ****************** */
 
 
-#bnt-restart:hover {
-	background: #1DC5FF;
-}
-
-#bnt-restart:active {
-	background: #0787B3;
-}
-
-#bnt-restart:disabled {
-	color: #444;
-	background: #CECECE;
-}
-
-
-
-
 
 /* ADDING NEW STYLES */
 
@@ -142,30 +126,32 @@ a:visited {
 	margin-top: 370px;
 	margin-left: 300px;
 	width: 200px;
-	background: #00AEEA;
+	background: #00afe9;
 	font-size: 1.5em;
 	color: #FFF;
-	border: none;
+	border: #000000;
 	border-radius: 6px;
 	cursor: pointer;
 
 
 }
-.button2{
-	float: right;
-	display: block;
-	margin-top: 500px;
-	
-	width: 200px;
-	background: #00AEEA;
-	font-size: 1.5em;
-	color: #FFF;
-	border: none;
-	border-radius: 6px;
-	cursor: pointer;
-
-
+.button1:hover {
+	background: #000000;
 }
+
+.button1:active {
+	background: #0787B3;
+}
+
+.button1:disabled {
+	color: #444;
+	background: #CECECE;
+}
+
+
+
+
+
 
 
 /***********************************************FIGMA************************************************/
