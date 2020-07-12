@@ -2,6 +2,7 @@ import random
 from flask import Flask, request, render_template, jsonify
 
 board = [' '] * 10
+turnNumber=0
 
 def ChooseLetter():
     return ['X', 'O']
@@ -174,46 +175,36 @@ def board_full(board):
             return False
     return True
 
-
+def update_turn(turnNumber):
+    turnNumber += 1
+    return turnNumber
 
 def ttt(place):    
-#<check if board is empty and then run the following functions:>
     player_letter, computer_letter = ChooseLetter()
     turn = 'player'
     First_Player = turn
     game_is_playing = True
-    turnNumber = 0
-
-
-    
+         
     while game_is_playing:
         if turn == 'player':
             move = place
             make_move(board, player_letter, move)
 
             if check_winner(board, player_letter):
-                draw_board(board)
-                print( "You win!")
                 game_is_playing = False
             if board_full(board):
-                draw_board(board)
-                print ("It is a tie!")
                 game_is_playing = False
             else:
                 turn = 'computer'
 
         else:
-            turnNumber += 1
-            move = get_move(board, computer_letter, First_Player, turnNumber)
+            tn = update_turn(turnNumber)
+            move = get_move(board, computer_letter, First_Player, tn)
             make_move(board, computer_letter, move)
 
             if check_winner(board, computer_letter):
-                draw_board(board)
-                print ("The computer wins.")
                 game_is_playing = False
             if board_full(board):
-                draw_board(board)
-                print ("Tie!")
                 game_is_playing = False
             else:
                 turn = 'player'
@@ -226,10 +217,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('main.html')
-
-@app.route('/index', methods=['GET','POST'])
-def play():
     return render_template('index.html')
 
 @app.route('/number1', methods = ['GET','POST'])

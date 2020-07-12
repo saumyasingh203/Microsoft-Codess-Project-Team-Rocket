@@ -29,18 +29,17 @@
    
     <script type=text/javascript>
       $(function() {
-			 $('a#num-0,a#num-1,a#num-2,a#num-3,a#num-4,a#num-5,a#num-6,a#num-7,a#num-8').bind('click', function() {
-                               
-				 $.getJSON('/number1', {                   
+			 $('a#1,a#2,a#3,a#4,a#5,a#6,a#7,a#8,a#9').bind('click', function() {
+          var buttonID = this.id;                     
+				 $.getJSON('/number'+buttonID, {                   
                                             
        }, 
        function(data) 
         {                      
-          for(var i=0;i<9;i++){
-            $("a#num-"+ String(i)).text(data.result[i]);
+          for(var i=1;i<=9;i++){
+            $("a#"+ String(i)).text(data.result[i]);
           }
 				});
-				return false;
 			  });
 			});
 
@@ -48,19 +47,19 @@
 
     <table id="tab-tic-tac-toe" cellspacing="0">
         <tr>
-            <td><a href=# id=num-0><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-1><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-2><button class="common-button">first</button></a></td>
+            <td><a href=# id=1><button class="common-button">first</button></a></td>
+            <td><a href=# id=2><button class="common-button">first</button></a></td>
+            <td><a href=# id=3><button class="common-button">first</button></a></td>
         </tr>
         <tr>
-            <td><a href=# id=num-3><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-4><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-5><button class="common-button">first</button></a></td>
+            <td><a href=# id=4><button class="common-button">first</button></a></td>
+            <td><a href=# id=5><button class="common-button">first</button></a></td>
+            <td><a href=# id=6><button class="common-button">first</button></a></td>
         </tr>
         <tr>
-            <td><a href=# id=num-6><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-7><button class="common-button">first</button></a></td>
-            <td><a href=# id=num-8><button class="common-button">first</button></a></td>
+            <td><a href=# id=7><button class="common-button">first</button></a></td>
+            <td><a href=# id=8><button class="common-button">first</button></a></td>
+            <td><a href=# id=9><button class="common-button">first</button></a></td>
         </tr>
         <br>
         <br>
