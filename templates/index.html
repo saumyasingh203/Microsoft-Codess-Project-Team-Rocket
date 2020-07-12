@@ -29,7 +29,7 @@
    
     <script type=text/javascript>
       $(function() {
-			 $('a#num-0,a#num-1,a#num-2,a#num-3,a#num-4,a#num-5,a#num-6,a#num-7,a#num-8').bind('click', function() {
+			 $('a#num-1').bind('click', function() {
                                
 				 $.getJSON('/number1', {                   
                                             
@@ -44,7 +44,62 @@
 			  });
 			});
 
+
+        $(function() {
+			 $('a#num-2').bind('click', function() {
+                               
+				 $.getJSON('/number2', {                   
+                                            
+       }, 
+       function(data) 
+        {                      
+          for(var i=0;i<9;i++){
+            $("a#num-"+ String(i)).text(data.result[i]);
+          }
+				});
+				return false;
+			  });
+			});
+
+
+
+        $(function() {
+			 $('a#num-3').bind('click', function() {
+                               
+				 $.getJSON('/number3', {                   
+                                            
+       }, 
+       function(data) 
+        {                      
+          for(var i=0;i<9;i++){
+            $("a#num-"+ String(i)).text(data.result[i]);
+          }
+				});
+				return false;
+			  });
+			});
+
+
+        $(function() {
+			 $('a#num-4').bind('click', function() {
+                               
+				 $.getJSON('/number4', {                   
+                                            
+       }, 
+       function(data) 
+        {                      
+          for(var i=0;i<9;i++){
+            $("a#num-"+ String(i)).text(data.result[i]);
+          }
+				});
+				return false;
+			  });
+			});
+
+
+
 		</script>
+
 
     <table id="tab-tic-tac-toe" cellspacing="0">
         <tr>
