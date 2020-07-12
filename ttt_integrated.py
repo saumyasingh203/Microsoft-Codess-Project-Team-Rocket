@@ -220,7 +220,7 @@ def home():
     return render_template('index.html')
 
 @app.route('/index')
-def play():
+def playSwitch():
     return render_template('index.html')
 
 @app.route('/number1', methods = ['GET','POST'])
