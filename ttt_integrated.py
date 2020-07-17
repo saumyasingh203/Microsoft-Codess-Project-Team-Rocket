@@ -1,5 +1,5 @@
 import random
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 
 board = [' '] * 10
 turnNumber=0
