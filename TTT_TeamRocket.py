@@ -260,9 +260,3 @@ while True:
 
    
         #break
-
-<<<<<<< HEAD
-# In[ ]:
-=======
-# In[ ]:
->>>>>>> origin/master
