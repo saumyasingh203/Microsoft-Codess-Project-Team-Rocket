@@ -7,7 +7,7 @@
 		-->
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <link rel="shortcut icon" href="tic-tac-toe.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/images/tic-tac-toe.png" type="image/x-icon">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link type="text/css" rel="stylesheet" href="static/css/style.css" />
@@ -28,45 +28,49 @@
     <p id="message" class="win-message">You Won</p>
    
     <script type=text/javascript>
-      $(function() {
-			 $('a#1,a#2,a#3,a#4,a#5,a#6,a#7,a#8,a#9').bind('click', function() {
-          var buttonID = this.id;                     
-				 $.getJSON('/number'+buttonID, {                   
-                                            
-       }, 
-       function(data) 
-        {                      
-          for(var i=1;i<=9;i++){
-            $("a#"+ String(i)).text(data.result[i]);
-          }
-				});
-			  });
-			});
+      function reply_click(thisid)
+      {
+
+          console.log(thisid);
+          // cell = document.getElementById(String(thisid));
+          // cell.innerHTML = "O";
+
+          $.getJSON('/number'+ thisid, {                                                     
+          }, 
+          function(data) 
+          {                      
+            for(var i=1;i<=9;i++)
+            {
+              cell = document.getElementById(String(i));
+              cell.innerHTML = data.result[i];
+            }
+          });
+      }
 		</script>
 
 
     <table id="tab-tic-tac-toe" cellspacing="0">
         <tr>
-            <td><a href=# id=1><button class="common-button">first</button></a></td>
-            <td><a href=# id=2><button class="common-button">first</button></a></td>
-            <td><a href=# id=3><button class="common-button">first</button></a></td>
+            <td id=1 class="common-button" onClick="reply_click(1)"></td>
+            <td id=2 class="common-button" onClick="reply_click(2)"></td>
+            <td id=3 class="common-button" onClick="reply_click(3)"></td>
         </tr>
         <tr>
-            <td><a href=# id=4><button class="common-button">first</button></a></td>
-            <td><a href=# id=5><button class="common-button">first</button></a></td>
-            <td><a href=# id=6><button class="common-button">first</button></a></td>
+            <td id=4 class="common-button" onClick="reply_click(4)"></td>
+            <td id=5 class="common-button" onClick="reply_click(5)"></td>
+            <td id=6 class="common-button" onClick="reply_click(6)"></td>
         </tr>
         <tr>
-            <td><a href=# id=7><button class="common-button">first</button></a></td>
-            <td><a href=# id=8><button class="common-button">first</button></a></td>
-            <td><a href=# id=9><button class="common-button">first</button></a></td>
+            <td id=7 class="common-button" onClick="reply_click(7)"></td>
+            <td id=8 class="common-button" onClick="reply_click(8)"></td>
+            <td id=9 class="common-button" onClick="reply_click(9)"></td>
         </tr>
         <br>
         <br>
     </table>
     <div>
     
-    <a href=# id="start"><button class="button1">AI Start</button></a>
+    <button id="start" class="button1">AI Start</button>
     </div>
 </div>
 
@@ -77,19 +81,14 @@
         <div class="levelSelect">Choose your Level
           <table id="levels">
             <tr>
-              <td><a href=# id=level-1><button class="level-button">1</button></a></td>
-              <td><a href=# id=level-2><button class="level-button">2</button></a></td>
-              <td><a href=# id=level-3><button class="level-button">3</button></a></td>
-              <td><a href=# id=level-4><button class="level-button">MAX</button></a></td>
+              <td><button id=level-1 class="level-button">1</button></td>
+              <td><button id=level-2 class="level-button">2</button></td>
+              <td><button id=level-3 class="level-button">3</button></td>
+              <td><button id=level-4 class="level-button">MAX</button></td>
             </tr>
           </table>
         </div>
       </div>
-
-   
-    
-  
-       
 
 </body>
 

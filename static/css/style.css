@@ -89,11 +89,14 @@ a:visited {
 }
 
 .common-button{
+	background-color: #F8F8F8;
+	font-family: 'Balsamiq Sans', cursive;
+	font-size: 80px;
 	cursor: pointer;
 	height: 95px;
 	width: 95px;
 	border: none;
-	visibility: hidden;
+	/* visibility: hidden; */
 }
 
 .level-button{
@@ -188,9 +191,7 @@ a:visited {
 
 #sideHeaderText 
 { 
-	
 	position: absolute;
-	
 	font-family: Sansita;
 	font-style: normal;
 	font-weight: normal;
@@ -200,9 +201,7 @@ a:visited {
 	margin-top: 20px;
 	align-items: center;
 	text-align: center;
-
 	color: #FFFFFF;
-
 	text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -212,7 +211,6 @@ a:visited {
 	margin-top: 50px;
 	background: #FFDEE6;
 	opacity:1;
-	position: absolute;
 	font-family: sans-serif;
 	margin-left: 50px;
 	font-size: 25px;
