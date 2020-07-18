@@ -2,7 +2,9 @@ import random
 from flask import Flask, request, render_template, jsonify
 
 board = [' '] * 10
-turnNumber=0
+turnNumber = 0
+isWinner = 0
+win = [0, 0, 0]
 
 def ChooseLetter():
     return ['X', 'O']
@@ -11,7 +13,8 @@ def ChooseLetter():
 def make_move(board, letter, move):
     if Space_Free(board, move):#?
         board[move] = letter
-    
+
+
 def check_winner(bo, le):
 #rows check
     return ((bo[7] == le and bo[8] == le and bo[9] == le) or 
@@ -22,6 +25,45 @@ def check_winner(bo, le):
     (bo[9] == le and bo[6] == le and bo[3] == le) or # diagonals check
     (bo[7] == le and bo[5] == le and bo[3] == le) or 
     (bo[9] == le and bo[5] == le and bo[1] == le)) 
+    
+def update_winner(bo, le):
+#rows check
+    global win
+    global isWinner
+    if (bo[7] == le and bo[8] == le and bo[9] == le) :
+        win = [7, 8, 9]
+        isWinner = 1
+        return True
+    if (bo[4] == le and bo[5] == le and bo[6] == le) :
+        win = [4, 5, 6]
+        isWinner = 1
+        return True
+    if (bo[1] == le and bo[2] == le and bo[3] == le) :
+        win = [1, 2, 3]
+        isWinner = 1
+        return True
+    if (bo[7] == le and bo[4] == le and bo[1] == le) :
+        win = [7, 4, 1]
+        isWinner = 1
+        return True
+    if (bo[8] == le and bo[5] == le and bo[2] == le) :
+        win = [8, 5, 2]
+        isWinner = 1
+        return True
+    if (bo[9] == le and bo[6] == le and bo[3] == le) :
+        win = [9, 6, 3]
+        isWinner = 1
+        return True
+    if (bo[7] == le and bo[5] == le and bo[3] == le) :
+        win = [7, 5, 3]
+        isWinner = 1
+        return True
+    if (bo[9] == le and bo[5] == le and bo[1] == le) :
+        win = [9, 5, 1]
+        isWinner = 1
+        return True
+    
+   
 
 def board_copy(board):
     dupeBoard = []
@@ -181,6 +223,12 @@ def update_turn(turnNumber):
 
 def ttt(place):    
     player_letter, computer_letter = ChooseLetter()
+
+    if check_winner(board, computer_letter):
+        return board
+    if check_winner(board, player_letter):
+        return board
+
     turn = 'player'
     First_Player = turn
     game_is_playing = True
@@ -225,49 +273,66 @@ def playSwitch():
 
 @app.route('/number1', methods = ['GET','POST'])
 def number1():
-    answer=ttt(1)
-    return jsonify(result=answer)
+    ttt(1)
+    update_winner(board, 'X')
+    update_winner(board, 'O')
+    return jsonify(result=board, hasWon=isWinner, winBoard=win)
 
 @app.route('/number2', methods = ['GET','POST'])
 def number2():
-    answer=ttt(2)
-    return jsonify(result=answer)
+    answer = ttt(2)
+    update_winner(board, 'X')
+    update_winner(board, 'O')
+    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
 
 @app.route('/number3', methods = ['GET','POST'])
 def number3():
-    answer=ttt(3)
-    return jsonify(result=answer)
+    answer = ttt(3)
+    update_winner(board, 'X')
+    update_winner(board, 'O')
+    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
 
 @app.route('/number4', methods = ['GET','POST'])
 def number4():
-    answer=ttt(4)
-    return jsonify(result=answer)
+    answer = ttt(4)
+    update_winner(board, 'X')
+    update_winner(board, 'O')
+    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
 
 @app.route('/number5', methods = ['GET','POST'])
 def number5():
-    answer=ttt(5)
-    return jsonify(result=answer)
+    answer = ttt(5)
+    update_winner(board, 'X')
+    update_winner(board, 'O')
+    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
 
 @app.route('/number6', methods = ['GET','POST'])
 def number6():
-    answer=ttt(6)
-    return jsonify(result=answer)
+    answer = ttt(6)
+    update_winner(board, 'X')
+    update_winner(board, 'O')
+    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
 
 @app.route('/number7', methods = ['GET','POST'])
 def number7():
-    answer=ttt(7)
-    return jsonify(result=answer)
+    answer = ttt(7)
+    update_winner(board, 'X')
+    update_winner(board, 'O')
+    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
 
 @app.route('/number8', methods = ['GET','POST'])
 def number8():
-    answer=ttt(8)
-    return jsonify(result=answer)
+    answer = ttt(8)
+    update_winner(board, 'X')
+    update_winner(board, 'O')
+    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
 
 @app.route('/number9', methods = ['GET','POST'])
 def number9():
-    answer=ttt(9)
-    return jsonify(result=answer)
+    answer = ttt(9)
+    update_winner(board, 'X')
+    update_winner(board, 'O')
+    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
 
 if __name__ == '__main__':
     app.run(debug=True)
-   

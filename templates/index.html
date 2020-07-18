@@ -44,6 +44,14 @@
               cell = document.getElementById(String(i));
               cell.innerHTML = data.result[i];
             }
+
+            console.log(data.hasWon);
+            console.log(data.winBoard);
+            if(data.hasWon == 1)
+            {
+               for(var i=0;i<3;i++)
+                  document.getElementById(String(data.winBoard[i])).style.color= "red";
+            }
           });
       }
 		</script>
