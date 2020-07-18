@@ -100,6 +100,7 @@ a:visited {
 }
 
 .level-button{
+
 	font-family: 'Balsamiq Sans', cursive;
 	font-size: 1em;
 	background-color: #F8F8F8;
@@ -123,11 +124,12 @@ a:visited {
 
 
 
-.button1{
+.start-AI{
 	
+	position: absolute;
 	display: block;
 	margin-top: 370px;
-	margin-left: 300px;
+	margin-left: 200px;
 	width: 200px;
 	background: #00afe9;
 	font-size: 1.5em;
@@ -138,18 +140,31 @@ a:visited {
 
 
 }
-.button1:hover {
+.start-Human{
+	
+	position: absolute;
+	display: block;
+	margin-top: 370px;
+	margin-left: 410px;
+	width: 200px;
+	background: #00afe9;
+	font-size: 1.5em;
+	color: #FFF;
+	border: #000000;
+	border-radius: 6px;
+	cursor: pointer;
+
+
+}
+
+.start-AI:hover {
 	background: #000000;
 }
 
-.button1:active {
-	background: #0787B3;
+.start-Human:hover {
+	background: #000000;
 }
 
-.button1:disabled {
-	color: #444;
-	background: #CECECE;
-}
 
 
 
