@@ -6,6 +6,8 @@ function level_click(thisid)
     }
     document.querySelector("#level-" + thisid).classList.add("pressed");
 
+    console.log('/level' + thisid);
+    $.getJSON('/level' + thisid, {},{});
     
 }
 
@@ -40,6 +42,7 @@ function reply_click(thisid)
                 document.getElementById(String(data.winBoard[i])).style.color = "red";
         }
     });
+    
 }
 
 
