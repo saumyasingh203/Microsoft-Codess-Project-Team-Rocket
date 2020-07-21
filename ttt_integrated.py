@@ -343,6 +343,7 @@ def number9():
 
 @app.route('/level1', methods = ['GET','POST'])
 def level1():
+<<<<<<< HEAD
     level = 1
     return jsonify(board)
 
@@ -360,6 +361,21 @@ def level3():
 def level4():
     level = 4
     return jsonify(board)
+=======
+    level=1
+
+@app.route('/level2', methods = ['GET','POST'])
+def level2():
+    level=2
+    
+@app.route('/level3', methods = ['GET','POST'])
+def level3():
+    level=3
+    
+@app.route('/level4', methods = ['GET','POST'])
+def level4():
+    level=4
+>>>>>>> 3006afd487e7c7439561e63354bca134bd26921d
 
 if __name__ == '__main__':
     app.run(debug=True)
