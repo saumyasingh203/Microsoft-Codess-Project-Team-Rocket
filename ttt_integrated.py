@@ -98,7 +98,7 @@ def Random_Move(board, moves): #This function randomly chooses a spot from the l
     else:
         return None
     
-def move_l4(board, computer_letter,First_Player, turnNumber):
+def move_l4(board, computer_letter,First_Player, tn):
     if computer_letter == 'X':
         players_letter = 'O'
     else:
@@ -123,7 +123,7 @@ def move_l4(board, computer_letter,First_Player, turnNumber):
         if Space_Free(board, 5):
             return 5
 
-    if turnNumber == 2 and First_Player == 'player':
+    if tn == 2 and First_Player == 'player':
         move = Random_Move(board, [2, 4, 6, 8])
         if move != None:
             return move
@@ -197,7 +197,7 @@ def move_l3(board, computer_letter):
     if move != None:
         return move
 
-def get_move_draft(board, computerletter, theFirstPlayer, turnNumber, difficulty):
+def get_move_draft(board, computer_letter, First_Player, tn, difficulty):
     if difficulty == 1:
         move = move_l1(board, computer_letter)
         return move
@@ -208,7 +208,7 @@ def get_move_draft(board, computerletter, theFirstPlayer, turnNumber, difficulty
         move = move_l3(board, computer_letter)
         return move
     if difficulty == 4:
-        move = move_l4(board, computer_letter, First_Player, turnNumber)
+        move = move_l4(board, computer_letter, First_Player, tn)
         return move
 
 
@@ -343,21 +343,25 @@ def number9():
 
 @app.route('/level1', methods = ['GET','POST'])
 def level1():
+    global level
     level = 1
     return jsonify(board)
 
 @app.route('/level2', methods = ['GET','POST'])
 def level2():
+    global level
     level = 2
     return jsonify(board)
     
 @app.route('/level3', methods = ['GET','POST'])
 def level3():
+    global level
     level = 3
     return jsonify(board)
     
 @app.route('/level4', methods = ['GET','POST'])
 def level4():
+    global level
     level = 4
     return jsonify(board)
 
