@@ -1,5 +1,6 @@
 /* *********************************INDEX.HTML***************************************************** */
 body {
+	font-family: 'Balsamiq Sans', cursive;
 	margin: 0;
 	padding: 0;
 	background-color:#FF7E9D;
@@ -13,7 +14,7 @@ body {
 	text-align: center;
 	height: 60px;
 	padding-top: 9px;
-	
+	text-shadow: 1px rgb(179, 179, 179);
 	margin-top: 0px;
 	box-sizing: border-box;
 	position: relative;
@@ -32,17 +33,17 @@ body {
 
 
 a {
+	font-size: 20px;
 	font-family: 'Balsamiq Sans', cursive;
-	text-decoration: none;
-	color: black;
-	
+	text-shadow: 1px rgb(0, 0, 0);
+	color: rgb(0, 151, 216);	
 }
 
 a:hover {
-	color: black;
+	color: rgba(8, 99, 202, 0.808);
 }
 a:visited {
-	color: black;
+	color: rgb(0, 141, 197);
 }
 
 /* ****************** Table style ****************** */
@@ -165,6 +166,9 @@ a:visited {
 	background: #000000;
 }
 
+.pressedStart{
+	background: #000000;
+}
 
 
 
@@ -222,16 +226,15 @@ a:visited {
 
 
 .levelSelect{
-	
+	font-family: 'Balsamiq Sans', cursive;
 	margin-top: 50px;
 	background: #FFDEE6;
 	opacity:1;
-	font-family: sans-serif;
 	margin-left: 50px;
 	font-size: 25px;
 	text-align: center;
 	display: inline-block;
-	color: #000000;
+	color: #3d3c3c;
 
 }
 
@@ -307,5 +310,11 @@ a:visited {
 }
 
 .level-button:hover {
-	background: #ececec;
+	background: #00afe944;
+	border-radius: 5px;
+}
+
+.pressed{
+	background: #00afe95d;
+	border: 1.5px solid black;
 }

@@ -6,17 +6,72 @@
     <link type="text/css" rel="stylesheet" href="static/css/style2.css" />
     <link href="https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="/static/images/tic-tac-toe.png" type="image/x-icon">
     <title>Document</title>
 </head>
 <body>
 
-    <div id="matrix"><div class="w3-container w3-center w3-animate-right" id="top-mat"></div></div>
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+    
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                Wait! Tell Us More About Yourself
+            </div>
+            <div class="modal-body">
+                <div id="form">
+                
+                    <div class="fish" id="fish"></div>
+                    <div class="fish" id="fish2"></div>
+                
+                    <form id="waterform" method="post">
+                
+                        <div class="formgroup" id="name-form">
+                            <label for="name">Your name*</label>
+                            <input type="text" id="name" name="name" autocomplete="off"/>
+                        </div>
+                
+                        <div class="formgroup" id="email-form">
+                            <label for="email">Your e-mail*</label>
+                            <input type="email" id="email" name="email" autocomplete="off"/>
+                        </div>
+                
+                        <div class="formgroup" id="message-form">
+                            <label for="message">Your message</label>
+                            <input type="text" id="message" name="message" autocomplete="off"/>
+                        </div>
+                
+                        <!-- <input type="submit" value="Send your message!" /> -->
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="/index"><button id="myBtn">Let's Play!</button></a>
+            </div>
+        </div>
+    
+    </div>
+
+<!-- <div class="main-div"> -->
+    
+    <div id="matrix" class="w3-center w3-animate-right"><div class="w3-container w3-center w3-animate-right" id="top-mat"></div></div>
     <header class="w3-center w3-animate-bottom" >TIC-TAC-TOE</header>
-    <div class="w3-center w3-animate-right" id="tilt-matrix"></div>
-    <div id="play-button"> <a href="/index">PLAY<img src="/static/images/play.png" style='height: 100%; width: 100%; object-fit: contain' alt=""></a></div>
+    <header id="team" class="w3-animate-zoom">Microsoft Team : ROCKET </header>
+    <div class="w3-center w3-animate-left" id="tilt-matrix"></div>
+    <div id="play-button" class="w3-animate-zoom" >PLAY<img class="w3-animate-zoom" src="/static/images/play.png" style='height: 100%; width: 100%; object-fit: contain' alt=""></div>
+<!-- </div> -->
 
 
     
 </body>
+
+<script src="/static/js/script.js"></script>
+
 </html>

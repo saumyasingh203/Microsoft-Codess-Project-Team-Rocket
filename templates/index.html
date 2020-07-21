@@ -13,7 +13,7 @@
     <link type="text/css" rel="stylesheet" href="static/css/style.css" />
     <script type=src="script.js"></script>
     <title> Microsoft Team : ROCKET</title>
-
+    <script src="/static/js/script.js"></script>
 
 </head>
 
@@ -26,36 +26,7 @@
     </div>
     
     <p id="message" class="win-message">You Won</p>
-   
-    <script type=text/javascript>
-      function reply_click(thisid)
-      {
-
-          console.log(thisid);
-          // cell = document.getElementById(String(thisid));
-          // cell.innerHTML = "O";
-
-          $.getJSON('/number'+ thisid, {                                                     
-          }, 
-          function(data) 
-          {                      
-            for(var i=1;i<=9;i++)
-            {
-              cell = document.getElementById(String(i));
-              cell.innerHTML = data.result[i];
-            }
-
-            console.log(data.hasWon);
-            console.log(data.winBoard);
-            if(data.hasWon == 1)
-            {
-               for(var i=0;i<3;i++)
-                  document.getElementById(String(data.winBoard[i])).style.color= "red";
-            }
-          });
-      }
-		</script>
-
+    
 
     <table id="tab-tic-tac-toe" cellspacing="0">
         <tr>
@@ -77,8 +48,8 @@
         <br>
     </table>
     
-    <button id="s1" class="start-AI">AI Start</button>
-    <button id="s2" class="start-Human">Human Start</button>
+    <button id="s1" class="start-AI" onClick="startwith(1)" >AI Start</button>
+    <button id="s2" class="start-Human" onClick="startwith(2)" >Human Start</button>
 
     
 </div>
@@ -90,12 +61,14 @@
         <div class="levelSelect">Choose your Level
           <table id="levels">
             <tr>
-              <td><button id=level-1 class="level-button">1</button></td>
-              <td><button id=level-2 class="level-button">2</button></td>
-              <td><button id=level-3 class="level-button">3</button></td>
-              <td><button id=level-4 class="level-button">MAX</button></td>
+              <td><button id=level-1 class="level-button" onClick="level_click(1)">1</button></td>
+              <td><button id=level-2 class="level-button" onClick="level_click(2)">2</button></td>
+              <td><button id=level-3 class="level-button" onClick="level_click(3)">3</button></td>
+              <td><button id=level-4 class="level-button" onClick="level_click(4)">MAX</button></td>
             </tr>
           </table>
+          <br><br><br><br><br><br><br>
+          <strong><a href="https://github.com/saumyasingh203/Microsoft-Codess-Project-Team-Rocket">Checkout Our Code</a>❤️</strong>
         </div>
       </div>
 

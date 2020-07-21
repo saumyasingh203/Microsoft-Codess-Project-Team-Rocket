@@ -1,18 +1,35 @@
 /**********************************MAIN.HTML***************************************************** */
 
 body{
-	background-color:#ffb0c3;
+	background-image: url('/static/images/pokem.png');
+	background-repeat: no-repeat;
 }
+
+/* .main-div{
+	background-image: url(/static/images/forestpokemon.jpg);
+	background-repeat: no-repeat;
+	object-fit: contain;
+	width: 100%;
+	height: 599px;
+} */
 header{
 	font-family: 'Caveat Brush', cursive;
+	text-shadow: 2px 2px 4px white;
+	text-shadow: black;
 	font-size: 100px;
+}
+
+#team{
+    font-family: 'Caveat Brush';
+	text-shadow: 2px 2px 4px white;
+	font-size: 50px;
 }
 #tilt-matrix{
 	float:right;
 	transform: rotate(-36.72745321626415deg);
-	opacity:0.2;
+	opacity:0.3;
 	margin-top:-130px;
-	margin-right:-60px;
+	margin-right:-20px;
 	width:400px;
 	height:400px;
 	background-image:url("/static/images/tilt-grid.png");
@@ -20,11 +37,13 @@ header{
 }
 
 #play-button{
+    cursor: pointer;
 	margin-top:130px;
 	margin-left:800px;
 	width:100px;
 	height:100px;
-	background-repeat:no-repeat;
+    background-repeat:no-repeat;
+    text-shadow: 2px 2px 4px white;
 	text-align: center;
 	font-size: 40px;
 	font-family: fantasy;
@@ -32,21 +51,282 @@ header{
 
 #matrix{
 	float: left;
-	margin-left: 200px;
+	margin-left: 30px;
 	width:506px;
 	height:560px;
-	background-image: url(/static/images/notepad.png);
+	background-image: url(/static/images/jessejames.png);
 	background-size: contain;
 	background-repeat:no-repeat;
 }
 
-#top-mat{
+/* #top-mat{
 	float: left;
 	margin-left: 40px;
 	margin-top: 100px;
-	width:360px;
-	height:560px;
+	width:350px;
+	height:350px;
 	background-image: url(/static/images/tilt-grid.png);
+	text-shadow: white;
 	background-size: contain;
 	background-repeat:no-repeat;
+} */
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 20px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  margin-bottom: 100px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.modal-header {
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 2.5rem;
+  padding: 2px 16px;
+  background-color: black;
+  color: white;
+}
+
+.modal-body {padding: 2px 2px;}
+
+.modal-footer {
+  padding: 10px 16px;
+  background-color: #FF7E9D;
+  color: white;
+}
+
+
+#myBtn {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+  border-radius: 18px;
+  margin-left: 420px;
+  height: 50px;
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 1.5rem;
+  
+}
+
+#myBtn:hover {
+  background-color: #e7e7e7;
+}
+
+#myBtn:focus { 
+	-moz-outline-style: none; 
+	outline: none;
+}
+
+
+/******************************** WATER FORM ******************************************/
+
+@import url(https://fonts.googleapis.com/css?family=Sniglet|Raleway:900);
+
+
+body, html{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Sniglet', cursive;
+}
+h1{
+    font-weight: normal;
+    font-size: 4em;
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 500px;
+    color: #F90;
+    text-align: center;
+
+}
+
+/* Animation webkit */
+@-webkit-keyframes myfirst
+{
+    0% {margin-left: -235px}
+    90% {margin-left: 100%;}
+    100% {margin-left: 100%;}
+}
+
+/* Animation */
+@keyframes myfirst
+{
+    0% {margin-left: -235px}
+    70% {margin-left: 100%;}
+    100% {margin-left: 100%;}
+}
+
+.fish{
+	background-image: url('/static/images/jesse.png');
+	background-size: 200px;
+	background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    margin-left: -200px;
+    position: absolute; 
+    animation: myfirst 20s;
+    -webkit-animation: myfirst 15s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+}
+
+#fish{
+    top: 120px;
+}
+
+#fish2{
+	background-image: url('/static/images/james.png');
+	background-size: 100px;
+    top: 80px;
+    animation-delay: 5s;
+    -webkit-animation-delay: 5s;
+}
+
+#form{
+    height: 100%;   
+	background-image: url('/static/images/forestpokemonblur.jpg');
+	height: 400px;
+    overflow: hidden;
+    position: relative;
+    
+}
+form{
+    margin: 0 auto;
+    width: 500px;
+    padding-top: 40px;
+    color: white;
+    position: relative;
+    
+    
+}
+label, input, textarea{
+    display: block; 
+}
+input, textarea{
+    width: 500px;   
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    padding: 10px;
+    font-family: 'Sniglet', cursive;
+    font-size: 1em;
+    color: #676767;
+    transition: border 0.5s;
+    -webkit-transition: border 0.5s;
+    -moz-transition: border 0.5s;
+    -o-transition: border 0.5s;
+    border: solid 3px #98d4f3;  
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    
+}
+input:focus, textarea:focus{
+    border: solid 3px #3283ac;  
+}
+
+textarea{
+    height: 100px;  
+    resize: none; 
+    overflow: auto;
+}
+/* input[type="submit"]{
+    background-color: #F90;
+    color: white;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    font-size: 1.29em;
+    font-family: 'Sniglet', cursive;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+input[type="submit"]:hover{
+    background-color: #e58f0e;
+    
+} */
+label{
+    font-size: 1.5em;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+.formgroup, .formgroup-active, .formgroup-error{
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: 10.5%;
+    transition: background-image 0.1s;
+    -webkit-transition: background-image 0.7s;
+    -moz-transition: background-image 0.7s;
+    -o-transition: background-image 0.7s;
+    width: 566px;
+    padding-top: 2px;
+}
+
+.formgroup{
+    background-image: url('http://www.geertjanhendriks.nl/codepen/form/pixel.gif'); 
+}
+.formgroup-active{
+    background-image: url('/static/images/meowth.png');
+}
+.formgroup-error{
+    background-image: url('http://www.geertjanhendriks.nl/codepen/form/octo-error.png');
+    color: red;
 }
