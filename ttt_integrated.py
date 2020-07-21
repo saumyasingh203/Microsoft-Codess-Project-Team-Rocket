@@ -5,6 +5,7 @@ board = [' '] * 10
 turnNumber = 0
 isWinner = 0
 win = [0, 0, 0]
+level=0
 
 def ChooseLetter():
     return ['X', 'O']
@@ -97,7 +98,7 @@ def Random_Move(board, moves): #This function randomly chooses a spot from the l
     else:
         return None
     
-def get_move(board, computer_letter,First_Player, turnNumber):
+def move_l4(board, computer_letter,First_Player, turnNumber):
     if computer_letter == 'X':
         players_letter = 'O'
     else:
@@ -197,16 +198,16 @@ def move_l3(board, computer_letter):
         return move
 
 def get_move_draft(board, computerletter, theFirstPlayer, turnNumber, difficulty):
-    if difficulty == 'l1':
+    if difficulty == 1:
         move = move_l1(board, computer_letter)
         return move
-    if difficulty == 'l2':
+    if difficulty == 2:
         move = move_l2(board, computer_letter)
         return move
-    if difficulty == 'l3':
+    if difficulty == 3:
         move = move_l3(board, computer_letter)
         return move
-    if difficulty == 'l4':
+    if difficulty == 4:
         move = move_l4(board, computer_letter, First_Player, turnNumber)
         return move
 
@@ -220,6 +221,8 @@ def board_full(board):
 def update_turn(turnNumber):
     turnNumber += 1
     return turnNumber
+
+##main function##
 
 def ttt(place):    
     player_letter, computer_letter = ChooseLetter()
@@ -247,7 +250,7 @@ def ttt(place):
 
         else:
             tn = update_turn(turnNumber)
-            move = get_move(board, computer_letter, First_Player, tn)
+            move = get_move_draft(board, computer_letter, First_Player, tn, level)
             make_move(board, computer_letter, move)
 
             if check_winner(board, computer_letter):
@@ -270,6 +273,8 @@ def home():
 @app.route('/index')
 def playSwitch():
     return render_template('index.html')
+
+##function calls to play game##
 
 @app.route('/number1', methods = ['GET','POST'])
 def number1():
@@ -333,6 +338,24 @@ def number9():
     update_winner(board, 'X')
     update_winner(board, 'O')
     return jsonify(result=answer, hasWon=isWinner, winBoard=win)
+
+##Assigning Levels##
+
+@app.route('/level1', methods = ['GET','POST'])
+def level1():
+    level=1
+
+@app.route('/level2', methods = ['GET','POST'])
+def level2():
+    level=2
+    
+@app.route('/level3', methods = ['GET','POST'])
+def level3():
+    level=3
+    
+@app.route('/level4', methods = ['GET','POST'])
+def level4():
+    level=4
 
 if __name__ == '__main__':
     app.run(debug=True)
