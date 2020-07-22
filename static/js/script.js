@@ -31,10 +31,20 @@ function level_click(thisid) {
 }
 
 
-function startwith(thisid) {
+function startwith(thisid)
+{
     document.querySelector("#s1").classList.remove("pressedStart");
     document.querySelector("#s2").classList.remove("pressedStart");
     document.querySelector("#s" + thisid).classList.add("pressedStart");
+
+    if (thisid == 1) {
+        $.getJSON('/startAI', {}, {});
+    }
+    else {
+        $.getJSON('/startHuman', {}, {});
+    }
+
+
 }
 
 
