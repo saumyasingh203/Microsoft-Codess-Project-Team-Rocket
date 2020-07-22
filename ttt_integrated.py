@@ -163,10 +163,10 @@ def move_l2(board, computer_letter):
     for i in range(1, 10):
         copy = board_copy(board)
         make_move(copy, players_letter, i)
-        if check_winner(copy, player_letter):
+        if check_winner(copy, players_letter):
             return i
 
-    move = Random_Move(board, [1, 2,3,4,5,6,7,8,9])
+    move = Random_Move(board, [1,2,3,4,5,6,7,8,9])
     if move != None:
         return move
 
