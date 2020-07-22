@@ -62,12 +62,15 @@ function reply_click(thisid) {
             }
             if(data.status ==1 ) {
                 //player wins
+                document.getElementById("message").innerHTML = "Wuhoo, You Won :)";
             }
             if(data.status ==0 ) {
                 //tie
+                document.getElementById("message").innerHTML = "It's a Tie :|";
             }
             if(data.status == -1 ) {
                 //computer wins
+                document.getElementById("message").innerHTML = "Oops, You Lost :(";
             }
             console.log(data.hasWon);
             console.log(data.winBoard);

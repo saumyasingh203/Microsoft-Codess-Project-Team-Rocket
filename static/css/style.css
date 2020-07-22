@@ -57,8 +57,9 @@ body {
 }
 .win-message{
 	font-family: 'Balsamiq Sans', cursive;
-	font-size: 25px;
-	color: black;
+	text-shadow: 2px 2px 4px rgb(255, 255, 255);
+	font-size: 30px;
+	color: rgb(0, 0, 0)7);
 	text-align: center;
 	margin-top: 100px;
 	margin-bottom: 0px;

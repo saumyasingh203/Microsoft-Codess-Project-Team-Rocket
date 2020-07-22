@@ -246,9 +246,11 @@ def ttt(place):
 
             if check_winner(board, player_letter):
                 game_is_playing = False
+                return(board)
             if board_full(board):
                 status=0
                 game_is_playing = False
+                return(board)
             else:
                 turn = 'computer'
 
@@ -259,9 +261,11 @@ def ttt(place):
 
             if check_winner(board, computer_letter):
                 game_is_playing = False
+                return(board)
             if board_full(board):
                 status=0
                 game_is_playing = False
+                return(board)
             else:
                 turn = 'player'
                 return(board)
