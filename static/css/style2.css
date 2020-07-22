@@ -88,16 +88,16 @@
 /**********************************MAIN.HTML***************************************************** */
 
 body{
-	background-color:  #FF7E9D;
+	background-image: url(/static/images/pokem.png);
 }
 
-.main-div{
+/* .main-div{
 	background-image: url(/static/images/pokem.png);
 	background-repeat: no-repeat;
 	object-fit: contain;
 	width: 100%;
 	height: 599px;
-}
+} */
 header{
 	font-family: 'Caveat Brush', cursive;
 	text-shadow: 2px 2px 4px white;
@@ -123,13 +123,13 @@ header{
 }
 
 #play-button{
-    cursor: pointer;
+  cursor: pointer;
 	margin-top:100px;
 	margin-left:800px;
 	width:100px;
 	height:100px;
-    background-repeat:no-repeat;
-    text-shadow: 2px 2px 4px white;
+  background-repeat:no-repeat;
+  text-shadow: 2px 2px 4px white;
 	text-align: center;
 	font-size: 40px;
 	font-family: fantasy;

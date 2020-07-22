@@ -1,3 +1,38 @@
+#leader{
+	font-size: 50px;
+	text-align: center;
+	text-shadow: 2px 2px 4px rgb(255, 255, 255);
+	margin-top: 90px;
+	margin-bottom: 50px;
+	text-decoration: wavy;
+	text-decoration: underline;
+}
+
+table.leader-table{
+	empty-cells: hide;
+    text-align: center;
+    font-size: 25px;
+    width: 100%;
+	margin-bottom: 100px;
+	background-color: #ffffff42;
+}
+.leader-table td{
+	font-family: cursive;
+	outline-style: double;
+	
+}
+
+#leader-head td{
+	background-color: black;
+	color: white;
+	text-shadow: 2px 2px 4px rgb(255, 255, 255);
+	font-family: cursive;
+	font-size: 32px;
+	
+}
+
+
+
 /* *********************************INDEX.HTML***************************************************** */
 body {
 	font-family: 'Balsamiq Sans', cursive;
@@ -124,7 +159,21 @@ a:visited {
 
 /* ADDING NEW STYLES */
 
+.scorecheck{
 
+	display: block;
+	margin-top: 7px;
+	margin-bottom: 35px;
+	margin-left: 480px;
+	width: 300px;
+	height: 40px;
+	background: #f8698a;
+	font-size: 1.5em;
+	color: #FFF;
+	border: 2px solid rgb(0, 0, 0);
+	border-radius: 6px;
+	cursor: pointer;
+}
 
 .start-AI{
 	
@@ -167,9 +216,14 @@ a:visited {
 	background: #000000;
 }
 
+
 .pressedStart{
 	background: #000000;
 	border: 2px solid white;
+}
+
+.scorecheck:hover {
+	background: #000000;
 }
 
 

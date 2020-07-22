@@ -2,18 +2,18 @@
 <html>
 
 <head>
-    <!--
+  <!--
 		Tic Tac Toe with Minimax AI Algorithm
 		-->
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <link rel="shortcut icon" href="/static/images/tic-tac-toe.png" type="image/x-icon">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="static/css/style.css" />
-    <script type=src="script.js"></script>
-    <title> Microsoft Team : ROCKET</title>
-    <script src="/static/js/script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link rel="shortcut icon" href="/static/images/tic-tac-toe.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link type="text/css" rel="stylesheet" href="static/css/style.css" />
+  <script type=src="script.js"></script>
+  <title> Microsoft Team : ROCKET</title>
+  <script src="/static/js/script.js"></script>
 
 </head>
 
@@ -22,55 +22,99 @@
 
   <div id="mainBox">
     <div id="header">
-        Tic-Tac-Toe <br>Microsoft Team : ROCKET
+      Tic-Tac-Toe <br>Microsoft Team : ROCKET
     </div>
-    
+
     <p id="message" class="win-message">You Won</p>
-    
+
 
     <table id="tab-tic-tac-toe" cellspacing="0">
-        <tr>
-            <td id=1 class="common-button" onClick="reply_click(1)"></td>
-            <td id=2 class="common-button" onClick="reply_click(2)"></td>
-            <td id=3 class="common-button" onClick="reply_click(3)"></td>
-        </tr>
-        <tr>
-            <td id=4 class="common-button" onClick="reply_click(4)"></td>
-            <td id=5 class="common-button" onClick="reply_click(5)"></td>
-            <td id=6 class="common-button" onClick="reply_click(6)"></td>
-        </tr>
-        <tr>
-            <td id=7 class="common-button" onClick="reply_click(7)"></td>
-            <td id=8 class="common-button" onClick="reply_click(8)"></td>
-            <td id=9 class="common-button" onClick="reply_click(9)"></td>
-        </tr>
-        <br>
-        <br>
+      <tr>
+        <td id=1 class="common-button" onClick="reply_click(1)"></td>
+        <td id=2 class="common-button" onClick="reply_click(2)"></td>
+        <td id=3 class="common-button" onClick="reply_click(3)"></td>
+      </tr>
+      <tr>
+        <td id=4 class="common-button" onClick="reply_click(4)"></td>
+        <td id=5 class="common-button" onClick="reply_click(5)"></td>
+        <td id=6 class="common-button" onClick="reply_click(6)"></td>
+      </tr>
+      <tr>
+        <td id=7 class="common-button" onClick="reply_click(7)"></td>
+        <td id=8 class="common-button" onClick="reply_click(8)"></td>
+        <td id=9 class="common-button" onClick="reply_click(9)"></td>
+      </tr>
+      <br>
+      <br>
     </table>
-    
-    <button id="s1" class="start-AI" onClick="startwith(1)" >AI Start</button>
-    <button id="s2" class="start-Human" onClick="startwith(2)" >Human Start</button>
 
-    
-</div>
+    <button id="s1" class="start-AI" onClick="startwith(1)">AI Start</button>
+    <button id="s2" class="start-Human" onClick="startwith(2)">Human Start</button>
 
-      <div id="sideCol">
-        <div id="sideHeader">
-          <span id="sideHeaderText">Tic-Tac-Toe </span>
-        </div>
-        <div class="levelSelect">Choose your Level
-          <table id="levels">
-            <tr>
-              <td><button id=level-1 class="level-button" onClick="level_click(1)">1</button></td>
-              <td><button id=level-2 class="level-button" onClick="level_click(2)">2</button></td>
-              <td><button id=level-3 class="level-button" onClick="level_click(3)">3</button></td>
-              <td><button id=level-4 class="level-button" onClick="level_click(4)">MAX</button></td>
-            </tr>
-          </table>
-          <br><br><br><br><br><br><br>
-          <strong><a href="https://github.com/saumyasingh203/Microsoft-Codess-Project-Team-Rocket">Checkout Our Code</a>❤️</strong>
-        </div>
-      </div>
+
+  </div>
+
+  <div id="sideCol">
+    <div id="sideHeader">
+      <span id="sideHeaderText">Tic-Tac-Toe </span>
+    </div>
+    <div class="levelSelect">Choose your Level
+      <table id="levels">
+        <tr>
+          <td><button id=level-1 class="level-button" onClick="level_click(1)">1</button></td>
+          <td><button id=level-2 class="level-button" onClick="level_click(2)">2</button></td>
+          <td><button id=level-3 class="level-button" onClick="level_click(3)">3</button></td>
+          <td><button id=level-4 class="level-button" onClick="level_click(4)">MAX</button></td>
+        </tr>
+      </table>
+      <br><br><br><br><br><br><br>
+      <strong><a href="https://github.com/saumyasingh203/Microsoft-Codess-Project-Team-Rocket">Checkout Our
+          Code</a>❤️</strong>
+    </div>
+  </div>
+  <div id="leader">
+    LEADERBOARD
+  </div>
+  <button class="scorecheck" onclick="checkscore()">View Your Ranking</button>
+  <br><br>
+  <table class="leader-table">
+    <tr id="leader-head">
+      <td>Player</td>
+      <td>Score</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Hello 1</td>
+      <td>Score 1</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Hello 1</td>
+      <td>Score 1</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
 
 </body>
 
