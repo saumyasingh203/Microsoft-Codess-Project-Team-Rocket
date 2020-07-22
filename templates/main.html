@@ -31,7 +31,7 @@
                     <div class="fish" id="fish"></div>
                     <div class="fish" id="fish2"></div>
                 
-                    <form id="waterform" method="post">
+                    <form id="waterform" action="/bind-user" method="post">
                 
                         <div class="formgroup" id="name-form">
                             <label for="name">Your name*</label>
@@ -47,13 +47,20 @@
                             <label for="message">Your message</label>
                             <input type="text" id="message" name="message" autocomplete="off"/>
                         </div>
-                
+                        <input type="hidden" name="score" value = "0">
                         <!-- <input type="submit" value="Send your message!" /> -->
                     </form>
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="/index"><button id="myBtn">Let's Play!</button></a>
+                <a
+            ><button
+              id="myBtn"
+              onclick="document.getElementById('waterform').submit()"
+            >
+              Let's Play!
+            </button></a
+          >
             </div>
         </div>
     
