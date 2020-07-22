@@ -60,7 +60,15 @@ function reply_click(thisid) {
                 cell = document.getElementById(String(i));
                 cell.innerHTML = data.result[i];
             }
-
+            if(data.status ==1 ) {
+                //player wins
+            }
+            if(data.status ==0 ) {
+                //tie
+            }
+            if(data.status == -1 ) {
+                //computer wins
+            }
             console.log(data.hasWon);
             console.log(data.winBoard);
             if (data.hasWon == 1) {
