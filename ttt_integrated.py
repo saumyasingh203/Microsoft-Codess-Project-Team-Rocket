@@ -6,6 +6,8 @@ turnNumber = 0
 isWinner = 0
 win = [0, 0, 0]
 level=0
+status=2 #-1 -> loss; 0 -> tie; 1 -> win
+
 
 def ChooseLetter():
     return ['X', 'O']
@@ -224,19 +226,7 @@ def update_turn(turnNumber):
 
 ##main function##
 
-def ttt(place):    
-    player_letter, computer_letter = ChooseLetter()
-
-    if check_winner(board, computer_letter):
-        return board
-    if check_winner(board, player_letter):
-        return board
-
-    turn = 'player'
-    First_Player = turn
-    game_is_playing = True
-         
-    while game_is_playing:
+while game_is_playing:
         if turn == 'player':
             move = place
             make_move(board, player_letter, move)
@@ -244,6 +234,8 @@ def ttt(place):
             if check_winner(board, player_letter):
                 game_is_playing = False
             if board_full(board):
+                global status
+                status=0
                 game_is_playing = False
             else:
                 turn = 'computer'
@@ -254,6 +246,8 @@ def ttt(place):
             make_move(board, computer_letter, move)
 
             if check_winner(board, computer_letter):
+                global status
+                status=0
                 game_is_playing = False
             if board_full(board):
                 game_is_playing = False
@@ -278,66 +272,98 @@ def playSwitch():
 
 @app.route('/number1', methods = ['GET','POST'])
 def number1():
-    ttt(1)
-    update_winner(board, 'X')
-    update_winner(board, 'O')
-    return jsonify(result=board, hasWon=isWinner, winBoard=win)
+    answer = ttt(1)
+    if (update_winner(board, 'X') == true) :
+        global status 
+        status = 1
+    if (update_winner(board, 'O') == true) :
+        global status 
+        status = -1    return jsonify(result=answer, hasWon=isWinner, winBoard=win, status)
 
 @app.route('/number2', methods = ['GET','POST'])
 def number2():
     answer = ttt(2)
-    update_winner(board, 'X')
-    update_winner(board, 'O')
-    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
+    if (update_winner(board, 'X') == true) :
+        global status 
+        status = 1
+    if (update_winner(board, 'O') == true) :
+        global status 
+        status = -1    return jsonify(result=answer, hasWon=isWinner, winBoard=win, status)
 
 @app.route('/number3', methods = ['GET','POST'])
 def number3():
     answer = ttt(3)
-    update_winner(board, 'X')
-    update_winner(board, 'O')
-    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
+    if (update_winner(board, 'X') == true) :
+        global status 
+        status = 1
+    if (update_winner(board, 'O') == true) :
+        global status 
+        status = -1    return jsonify(result=answer, hasWon=isWinner, winBoard=win, status)
 
 @app.route('/number4', methods = ['GET','POST'])
 def number4():
     answer = ttt(4)
-    update_winner(board, 'X')
-    update_winner(board, 'O')
-    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
+    if (update_winner(board, 'X') == true) :
+        global status 
+        status = 1
+    if (update_winner(board, 'O') == true) :
+        global status 
+        status = -1    return jsonify(result=answer, hasWon=isWinner, winBoard=win, status)
 
 @app.route('/number5', methods = ['GET','POST'])
 def number5():
     answer = ttt(5)
-    update_winner(board, 'X')
-    update_winner(board, 'O')
-    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
+    if (update_winner(board, 'X') == true) :
+        global status 
+        status = 1
+    if (update_winner(board, 'O') == true) :
+        global status 
+        status = -1    return jsonify(result=answer, hasWon=isWinner, winBoard=win, status)
 
 @app.route('/number6', methods = ['GET','POST'])
 def number6():
     answer = ttt(6)
-    update_winner(board, 'X')
-    update_winner(board, 'O')
-    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
+    if (update_winner(board, 'X') == true) :
+        global status 
+        status = 1
+    if (update_winner(board, 'O') == true) :
+        global status 
+        status = -1
+    return jsonify(result=answer, hasWon=isWinner, winBoard=win, status)
 
 @app.route('/number7', methods = ['GET','POST'])
 def number7():
     answer = ttt(7)
-    update_winner(board, 'X')
-    update_winner(board, 'O')
-    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
+    if (update_winner(board, 'X') == true) :
+        global status 
+        status = 1
+    if (update_winner(board, 'O') == true) :
+        global status 
+        status = -1
+    return jsonify(result=answer, hasWon=isWinner, winBoard=win, status)
 
 @app.route('/number8', methods = ['GET','POST'])
 def number8():
     answer = ttt(8)
-    update_winner(board, 'X')
-    update_winner(board, 'O')
-    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
+    if (update_winner(board, 'X') == true) :
+        global status 
+        status = 1
+    if (update_winner(board, 'O') == true) :
+        global status 
+        status = -1
+    return jsonify(result=answer, hasWon=isWinner, winBoard=win, status)
 
 @app.route('/number9', methods = ['GET','POST'])
 def number9():
     answer = ttt(9)
-    update_winner(board, 'X')
-    update_winner(board, 'O')
-    return jsonify(result=answer, hasWon=isWinner, winBoard=win)
+    if (update_winner(board, 'X') == true) :
+        global status 
+        status = 1
+    if (update_winner(board, 'O') == true) :
+        global status 
+        status = -1
+    return jsonify(result=answer, hasWon=isWinner, winBoard=win, status)
+
 
 ##Assigning Levels##
 
