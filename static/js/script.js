@@ -65,10 +65,23 @@ function startwith(thisid)
     document.querySelector("#s" + thisid).classList.add("pressedStart");
 
     if (thisid == 1) {
-        $.getJSON('/startAI', {}, {});
+        $.getJSON('/startAI', {},
+           function (data) {
+            for (var i = 1; i <= 9; i++) {
+                cell = document.getElementById(String(i));
+                cell.innerHTML = data.board[i];
+            }
+          });
+                  
     }
     else {
-        $.getJSON('/startHuman', {}, {});
+        $.getJSON('/startHuman', {},
+                   function (data) {
+            for (var i = 1; i <= 9; i++) {
+                cell = document.getElementById(String(i));
+                cell.innerHTML = data.board[i];
+            }
+          });
     }
 
 
