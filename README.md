@@ -40,17 +40,17 @@ Visit (insert link!!!!!) to access the deployed game.
 Setup and Installation
 ------------------------
 In order for the user to set up the game on their local machine, they are required to have Python3.5 (or a newer version) and a few dependencies installed. To set up the application, they are required to follow the following steps:
-* 1.Clone the repository
-* 2.Open the terminal window and execute the following command to install flask– a Python micro web framework that we have used on the backend.<br>
+* 1. Clone the repository
+* 2. Open the terminal window and execute the following command to install flask– a Python micro web framework that we have used on the backend.<br>
  ```pip install flask```
-* 3.Execute the following command to move into the 'address' directory.<br>
+* 3. Execute the following command to move into the 'address' directory.<br>
  ```cd address```
-* 4.Execute the following commands to install pymongo and dnspython– doing so will help you access the "leaderboard" database and consecutively view the leaderboard upon running the application on your local machine. <br>
+* 4. Execute the following commands to install pymongo and dnspython– doing so will help you access the "leaderboard" database and consecutively view the leaderboard upon running the application on your local machine. <br>
  ```pip install pymongo```<br>
  ```pip install dnspython```
-* 5.Run the following command to launch the flask application.<br>
+* 5. Run the following command to launch the flask application.<br>
  ```python ttt_integrated.py```
-* 6.After executing the previous command, the following will be displayed
+* 6. After executing the previous command, the following will be displayed
 
 This means that the website is successfully running on the local machine. Copy and pasting the link into the search bar of your browser will help you launch the web application on your local machine.
  
@@ -60,3 +60,14 @@ Upon successfully running the website on your local machine, typing the followin
 ```localhost:5000/database```<br>
 This will allow the user to view the comments left behind by the visitors along with their scores. The data stored is then displayed as follows:
 
+USER JOURNEY
+---------------
+The GIF given below will help the user navigate through the web application with ease.
+
+A visual guide to help show the user how to navigate through the application.
+
+In the previous demonstration, we see that a player playing at depth 1 has a greater chance of winning the game, the instance given below shows that such is not to be the case when playing at the maximum depth.
+
+SUPPORT
+---------
+For any queries or problems that may arise with regards to the project, the authors can be contacted at codessteamrocket@gmail.com
