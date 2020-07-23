@@ -56,7 +56,7 @@ In order for the user to set up the game on their local machine, they are requir
  ```pip install dnspython```
 5. Run the following command to launch the flask application.<br>
  ```python ttt_integrated.py```
-6. After executing the previous command, the following will be displayed:
+6. After executing the previous command, the following will be displayed:<br>
 ![](screencasts/loc.JPG)<br>
 This means that the website is successfully running on the local machine. Copy and pasting the link into the search bar of your browser will help you launch the web application on your local machine.
  
