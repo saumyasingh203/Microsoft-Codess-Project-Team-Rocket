@@ -9,7 +9,7 @@
 }
 
 table.leader-table{
-	empty-cells: show;
+
     text-align: center;
     font-size: 25px;
     width: 100%;
@@ -17,14 +17,14 @@ table.leader-table{
 	background-color: #ffffff42;
 }
 .leader-table td{
-	empty-cells: show;
+
 	font-family: cursive;
 	outline-style: double;
 	
 }
 
 #leader-head td{
-	empty-cells: show;
+	
 	background-color: black;
 	color: white;
 	text-shadow: 2px 2px 4px rgb(255, 255, 255);
@@ -76,7 +76,8 @@ body {
 
 
 a {
-	font-size: 25px;
+	font-size: 20px;
+	text-decoration: underline;
 	font-family: 'Balsamiq Sans', cursive;
 	color: black;
 	text-shadow: 1px 0px 0px rgba(255, 255, 255, 0.466);
@@ -170,8 +171,8 @@ a:visited {
 .scorecheck{
 
 	display: block;
-	margin-top: 7px;
-	margin-bottom: 35px;
+	margin-top: 4px;
+	margin-bottom: 7px;
 	margin-left: 480px;
 	width: 300px;
 	height: 40px;
@@ -181,6 +182,16 @@ a:visited {
 	border: 2px solid rgb(0, 0, 0);
 	border-radius: 6px;
 	cursor: pointer;
+}
+
+#upper-scorecheck{
+	font-family: 'Balsamiq Sans', cursive;
+	font-size: 1.2em;
+	border: 2px solid rgb(0, 0, 0);
+	width: 250px;
+	height: 40px;
+	color: #FFF;
+	background: #1fff449f;
 }
 
 .start-AI{
@@ -233,7 +244,9 @@ a:visited {
 .scorecheck:hover {
 	background: #000000;
 }
-
+#upper-scorecheck:hover {
+	background: #000000;
+}
 
 
 
