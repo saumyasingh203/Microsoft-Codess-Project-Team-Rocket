@@ -13,6 +13,7 @@ isWinner = 0
 win = [0, 0, 0]
 level=0
 status=2 #-1 -> loss; 0 -> tie; 1 -> win
+turn = 'player'
 
 def addUpdateUser(name, email, message, score = 0):
     userDocument = {
@@ -31,7 +32,35 @@ def addUpdateUser(name, email, message, score = 0):
         user = users.find_one({'email':email}, {"_id":0})
         currentUser = user
     print(currentUser)
-
+    
+def update_AI():
+    global turn
+    turn = 'computer'
+    global board
+    board = [' '] * 10
+    global turnNumber
+    turnNumber = 0
+    global isWinner
+    isWinner = 0
+    global win
+    win = [0, 0, 0]
+    global status
+    status=2
+    
+def update_human():
+    global turn
+    turn = 'player'
+    global board
+    board = [' '] * 10
+    global turnNumber
+    turnNumber = 0
+    global isWinner
+    isWinner = 0
+    global win
+    win = [0, 0, 0]
+    global status
+    status=2
+    
 
 def ChooseLetter():
     return ['X', 'O']
@@ -257,8 +286,8 @@ def ttt(place):
         return board
     if check_winner(board, player_letter):
         return board
-
-    turn = 'player'
+    
+    global turn
     First_Player = turn
     game_is_playing = True
     global status
@@ -469,6 +498,18 @@ def level4():
     global level
     level = 4
     return jsonify(board)
+
+##AI start and Human Start##
+@app.route('/startAI', methods = ['GET','POST'])
+def startAI():
+    update_AI()
+    return jsonify(board)
+
+@app.route('/startHuman', methods = ['GET','POST'])
+def startHuman():
+    update_human()
+    return jsonify(board)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
