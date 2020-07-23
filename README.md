@@ -12,8 +12,8 @@ TABLE OF CONTENTS
  
 INTRODUCTION
 -------------
-Tic-tac-toe (also known as noughts and crosses, three in a row, or Xs and Os) is a game for two players wherein each player takes turns marking the spaces, conventionally, in a 3x3 grid. The player that succeeds in placing three of their marks in either a horizontal, vertical, or diagonal row wins the game. 
-![](ttt.gif)
+Tic-tac-toe (also known as noughts and crosses, three in a row, or Xs and Os) is a game for two players wherein each player takes turns marking the spaces, conventionally, in a 3x3 grid. The player that succeeds in placing three of their marks in either a horizontal, vertical, or diagonal row wins the game. <br>
+![](screencasts/ttt.gif)
 
 PRODUCT DESCRIPTION
 --------------------
