@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: gunicorn ttt_integrated:app
