@@ -34,10 +34,11 @@ $.getJSON("/scores").then((data) => {
 
 function checkscore() {
     let j = 0;
-    for (let i = 2; j <= scores.length; i = i + 2) {
+    for (let i = 3; j <= 12; i = i + 3) {
         console.log(scores[j])
-        document.querySelectorAll(".leader-table td")[i].innerHTML = scores[j].name;
-        document.querySelectorAll(".leader-table td")[i + 1].innerHTML = scores[j].score;
+        document.querySelectorAll(".leader-table td")[i].innerHTML = j+1;
+        document.querySelectorAll(".leader-table td")[i+1].innerHTML = scores[j].name;
+        document.querySelectorAll(".leader-table td")[i + 2].innerHTML = scores[j].score;
         j = j + 1;
     }
 }

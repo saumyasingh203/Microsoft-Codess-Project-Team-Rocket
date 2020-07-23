@@ -9,26 +9,33 @@
 }
 
 table.leader-table{
-	empty-cells: hide;
+	empty-cells: show;
     text-align: center;
     font-size: 25px;
     width: 100%;
-	margin-bottom: 60px;
+	margin-bottom: 100px;
 	background-color: #ffffff42;
 }
 .leader-table td{
+	empty-cells: show;
 	font-family: cursive;
 	outline-style: double;
 	
 }
 
 #leader-head td{
+	empty-cells: show;
 	background-color: black;
 	color: white;
 	text-shadow: 2px 2px 4px rgb(255, 255, 255);
 	font-family: cursive;
 	font-size: 32px;
 	
+}
+#leader-bottom td{
+	empty-cells: show;
+	background-color: black;
+	color: black;	
 }
 
 
