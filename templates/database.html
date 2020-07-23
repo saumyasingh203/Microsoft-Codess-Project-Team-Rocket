@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+		Tic Tac Toe with Minimax AI Algorithm
+		-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
+      rel="stylesheet"
+    />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link
+      rel="shortcut icon"
+      href="/static/images/tic-tac-toe.png"
+      type="image/x-icon"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Microsoft Team : ROCKET</title>
+  </head>
+  <body>
+    <center>
+      <table id="database" class="table w-75">
+        <thead>
+          <tr id="head-row"></tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </center>
+    <!-- JQuery -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <!-- Bootstrap tooltips -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+    ></script>
+    <!-- Bootstrap core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+    ></script>
+    <!-- MDB core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"
+    ></script>
+    <script>
+      var table = document.getElementById("database");
+      var header = document.getElementById("head-row");
+      var body = document.getElementById("table-body");
+      $.getJSON("get-user-data").then((data) => {
+        let fields = Object.keys(data[0]);
+        for (i of fields) {
+          let newcol = document.createElement("th");
+          newcol.innerText = i;
+          header.appendChild(newcol);
+        }
+        for (i of data) {
+          let newRow = document.createElement("tr");
+          body.appendChild(newRow);
+          for (j of fields) {
+            let newentry = document.createElement("td");
+            newRow.appendChild(newentry);
+            newentry.innerText = i[j];
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

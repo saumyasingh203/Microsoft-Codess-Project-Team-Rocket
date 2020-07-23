@@ -1,15 +1,41 @@
-let scores = [
-    { name: "Player 1", score: 300 },
-    { name: "Player 2", score: 370 },
-    { name: "Player 3", score: 500 },
-    { name: "Player 4", score: 430 },
-    { name: "Player 5", score: 340 },
-];
+// let scores = [
+//     { name: "Player 1", score: 300 },
+//     { name: "Player 2", score: 370 },
+//     { name: "Player 3", score: 500 },
+//     { name: "Player 4", score: 430 },
+//     { name: "Player 5", score: 340 },
+// ];
 
+$.getJSON("/scores").then((data) => {
+    scores = data;
+    console.log(scores, scores.length)
+    //   console.log(scores);
+  });
+  $.getJSON("/get-user").then((data) => {
+    //   console.log(data["email"]);
+    currentUser = data;
+    //   console.log(data);
+    //   console.log(currentUser);
+    score = data["score"];
+    //   console.log(parseInt(score));
+    //   newscore = parseInt(score) + 400;
+    //   console.log(newscore);
+    //   console.log(currentUser);
+  
+    ////testing if code works
+    //   $.post("update-score", {
+    //     name: currentUser.name + "a",
+    //     email: currentUser.email,
+    //     score: newscore,
+    //     message: currentUser.message,
+    //   });
+    ////success
+  });
 
 function checkscore() {
     let j = 0;
     for (let i = 2; j <= scores.length; i = i + 2) {
+        console.log(scores[j])
         document.querySelectorAll(".leader-table td")[i].innerHTML = scores[j].name;
         document.querySelectorAll(".leader-table td")[i + 1].innerHTML = scores[j].score;
         j = j + 1;
@@ -62,6 +88,14 @@ function reply_click(thisid) {
             }
             if(data.status ==1 ) {
                 //player wins
+                let currentScore = parseInt(score) + 5;
+                //post request to increase the score by 5
+                $.post("update-score", {
+                    name: currentUser.name,
+                    email: currentUser.email,
+                    score: currentScore,
+                    message: currentUser.message,
+                });
                 document.getElementById("message").innerHTML = "Wuhoo, You Won :)";
             }
             if(data.status ==0 ) {
@@ -70,6 +104,13 @@ function reply_click(thisid) {
             }
             if(data.status == -1 ) {
                 //computer wins
+                let currentScore = parseInt(score) - 1;
+                $.post("update-score", {
+                    name: currentUser.name,
+                    email: currentUser.email,
+                    score: currentScore,
+                    message: currentUser.message,
+                });
                 document.getElementById("message").innerHTML = "Oops, You Lost :(";
             }
             console.log(data.hasWon);
