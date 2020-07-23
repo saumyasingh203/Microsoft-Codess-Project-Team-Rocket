@@ -40,17 +40,17 @@ Visit (insert link!!!!!) to access the deployed game.
 Setup and Installation
 ------------------------
 In order for the user to set up the game on their local machine, they are required to have Python3.5 (or a newer version) and a few dependencies installed. To set up the application, they are required to follow the following steps:
-* 1. Clone the repository
-* 2. Open the terminal window and execute the following command to install flask– a Python micro web framework that we have used on the backend.<br>
+1. Clone the repository
+2. Open the terminal window and execute the following command to install flask– a Python micro web framework that we have used on the backend.<br>
  ```pip install flask```
-* 3. Execute the following command to move into the 'address' directory.<br>
+3. Execute the following command to move into the 'address' directory.<br>
  ```cd address```
-* 4. Execute the following commands to install pymongo and dnspython– doing so will help you access the "leaderboard" database and consecutively view the leaderboard upon running the application on your local machine. <br>
+4. Execute the following commands to install pymongo and dnspython– doing so will help you access the "leaderboard" database and consecutively view the leaderboard upon running the application on your local machine. <br>
  ```pip install pymongo```<br>
  ```pip install dnspython```
-* 5. Run the following command to launch the flask application.<br>
+5. Run the following command to launch the flask application.<br>
  ```python ttt_integrated.py```
-* 6. After executing the previous command, the following will be displayed
+6. After executing the previous command, the following will be displayed
 
 This means that the website is successfully running on the local machine. Copy and pasting the link into the search bar of your browser will help you launch the web application on your local machine.
  
