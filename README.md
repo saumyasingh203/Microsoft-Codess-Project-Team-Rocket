@@ -13,7 +13,8 @@ TABLE OF CONTENTS
 INTRODUCTION
 -------------
 Tic-tac-toe (also known as noughts and crosses, three in a row, or Xs and Os) is a game for two players wherein each player takes turns marking the spaces, conventionally, in a 3x3 grid. The player that succeeds in placing three of their marks in either a horizontal, vertical, or diagonal row wins the game. <br>
-![](screencasts/ttt.gif)
+![](screencasts/ttt.gif)<br>
+The above GIF shows a sample game of Tic-Tac-Toe
 
 PRODUCT DESCRIPTION
 --------------------
@@ -25,6 +26,8 @@ The game has been developed to be played by a single player (the user) against t
 Algorithm Used
 ----------------
 The application makes use of the **MINIMAX** algorithm– it is an algorithm that is conventionally used for games that are played on a turn by turn basis, such as tic-tac-toe, chess, backgammon, etc. The backtracking algorithm, used in game theory and decision making, minimises the player’s losses and maximises his wins.  It considers the present state of the game and the moves available, then for each valid move it plays  (alternating between min and max) until it finds a terminal state (win, draw or lose).
+![](screencasts/ttt1.png)<br>
+The above image displays a partial game tree for Tic-Tac-Toe. Credits to Professor Eppstein of UC Irvine.
 
 TECHNOLOGIES
 -------------
@@ -53,15 +56,16 @@ In order for the user to set up the game on their local machine, they are requir
  ```pip install dnspython```
 5. Run the following command to launch the flask application.<br>
  ```python ttt_integrated.py```
-6. After executing the previous command, the following will be displayed
-
+6. After executing the previous command, the following will be displayed:
+![](screencasts/loc.JPG)<br>
 This means that the website is successfully running on the local machine. Copy and pasting the link into the search bar of your browser will help you launch the web application on your local machine.
  
 Viewing the database page
 ---------------------------
 Upon successfully running the website on your local machine, typing the following into the search bar of your browser will display the database page. <br>
 ```localhost:5000/database```<br>
-This will allow the user to view the comments left behind by the visitors along with their scores. The data stored is then displayed as follows:
+This will allow the user to view the comments left behind by the visitors along with their scores. The data stored in the database is then displayed as follows:<br>
+![](screencasts/dbpage.JPG)
 
 USER JOURNEY
 ---------------
