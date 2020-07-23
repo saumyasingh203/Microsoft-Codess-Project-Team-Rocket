@@ -56,7 +56,7 @@ This means that the website is successfully running on the local machine. Copy a
  
 Viewing the database page
 ---------------------------
-Upon successfully running the website on your local machine, typing the following into the search bar of your browser will display the database page. 
-```localhost:5000/database```
+Upon successfully running the website on your local machine, typing the following into the search bar of your browser will display the database page. <br>
+```localhost:5000/database```<br>
 This will allow the user to view the comments left behind by the visitors along with their scores. The data stored is then displayed as follows:
 
