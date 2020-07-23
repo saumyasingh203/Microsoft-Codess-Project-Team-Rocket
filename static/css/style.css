@@ -2,8 +2,8 @@
 	font-size: 50px;
 	text-align: center;
 	text-shadow: 2px 2px 4px rgb(255, 255, 255);
-	margin-top: 90px;
-	margin-bottom: 50px;
+	margin-top: 60px;
+	margin-bottom: 40px;
 	text-decoration: wavy;
 	text-decoration: underline;
 }
@@ -13,7 +13,7 @@ table.leader-table{
     text-align: center;
     font-size: 25px;
     width: 100%;
-	margin-bottom: 100px;
+	margin-bottom: 60px;
 	background-color: #ffffff42;
 }
 .leader-table td{
@@ -59,7 +59,7 @@ body {
 	font-family: 'Balsamiq Sans', cursive;
 	text-shadow: 2px 2px 4px rgb(255, 255, 255);
 	font-size: 30px;
-	color: rgb(0, 0, 0)7);
+	color: rgb(0, 0, 0);
 	text-align: center;
 	margin-top: 100px;
 	margin-bottom: 0px;
@@ -168,7 +168,7 @@ a:visited {
 	margin-left: 480px;
 	width: 300px;
 	height: 40px;
-	background: #f8698a;
+	background: #1fff44a2;
 	font-size: 1.5em;
 	color: #FFF;
 	border: 2px solid rgb(0, 0, 0);
