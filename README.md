@@ -20,7 +20,8 @@ Background
 -----------
 Microsoft’s Engage 2020 Mentorship Program aimed at equipping the students selected as mentees with the most up to date information in the field of Artificial Intelligence after having built a foundation for the same. The project undertaken by Team Rocket, a web-based application, has been designed to be an entertainment tool to be used by the crew of the Mars Colonization Project. The goal was to design a game of tic-tac-toe that utilised the concepts and principles of artificial intelligence with an original feature(s) or unique aspect(s) that set the project apart from that of others. 
 The game has been developed to be played by a single player (the user) against the Team Rocket AI. The application contains varying levels of depths for the player to choose from (with level 1 being the easiest for the player to beat as opposed to the maximum depth where the computer is undefeatable) that helps showcase the capabilities of the AI. 
-###Algorithm Used
+Algorithm Used
+----------------
 The application makes use of the MINIMAX algorithm; an algorithm that is conventionally used for games that are played on a turn by turn basis, such as tic-tac-toe, chess, backgammon, etc. The backtracking algorithm, used in game theory and decision making, minimises the player’s losses and maximises his wins.  It considers the present state of the game and the moves available, then for each valid move it plays  (alternating between min and max) until it finds a terminal state (win, draw or lose).
 
 TECHNOLOGIES
