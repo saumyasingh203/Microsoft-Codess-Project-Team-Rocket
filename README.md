@@ -13,8 +13,8 @@ TABLE OF CONTENTS
 INTRODUCTION
 -------------
 Tic-tac-toe (also known as noughts and crosses, three in a row, or Xs and Os) is a game for two players wherein each player takes turns marking the spaces, conventionally, in a 3x3 grid. The player that succeeds in placing three of their marks in either a horizontal, vertical, or diagonal row wins the game. <br>
-![](screencasts/ttt.gif)<br>
-The above GIF shows a sample game of Tic-Tac-Toe
+![](screencasts/samplegame.gif)<br>
+The above GIF shows a sample game of Tic-Tac-Toe on the web-application.
 
 PRODUCT DESCRIPTION
 --------------------
@@ -65,13 +65,18 @@ ADDITIONAL FEATURES
 Human Start and AI start
 -------------------------
 Once the user has clicked on the "Let's Play" button on the pop up appearing the home screen - prompting them to enter their details and to leave a message - they are lead to the game screen. Here, the user has a choice between the choice of levels and then between "AI start" and "Human start"; which will decide who will make the first move.<br>
-![](screencasts/humanstart.gif)<br>
-The above GIF shows an instance of the player making the first move.
+The below given GIF shows an instance of the player making the first move. <br>
+![](screencasts/humanstartsample.gif)<br>
 
+In comparision to the above given GIF, the one given below shows an instanc eof the Team Rocket AI making the first move.<br>
+![](screencasts/aistartsample.gif)
 
-Viewing the database page
+Leaderboard Database 
 ---------------------------
-The database makes use of emails as a unique key identifier which allows it to maintain the scores for the returning users. Upon successfully running the website on your local machine, typing the following into the search bar of your browser will display the database page. <br>
+The web application computes the scores as 5,-1, and 0 for a win, loss, and a tie respectively. The database makes use of emails as a unique key identifier which allows it to maintain the scores for the returning users. The leaderboard is displayed as follows:<br>
+![](screencasts/leaderboarddisplay.JPG)<br>
+
+Upon successfully running the website on your local machine, typing the following into the search bar of your browser will display the database page. <br>
 ```localhost:5000/database```<br>
 This will allow the user to view the comments left behind by the visitors along with their scores. The data stored in the database is then displayed as follows:<br>
 ![](screencasts/dbpage.JPG)
@@ -82,7 +87,8 @@ The GIF given below can act as a visual guide help the user navigate through the
 ![](screencasts/workingfinal.gif)<br>
 
 In the previous demonstration, we see that a player playing against the AI at the max depth has a greater chance of losing or tying the game. The instance given below shows that such is not to be the case when playing at a level 1 depth (for it is **_easier_** to beat the AI at **_level 1_** as opposed to the **_maximum_** depth).<br>
-![](screencasts/level1working.gif)<br>
+
+![](screencasts/samplegame.gif)<br>
 
 SUPPORT
 ---------
