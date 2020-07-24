@@ -60,6 +60,15 @@ In order for the user to set up the game on their local machine, they are requir
 ![](screencasts/loc.JPG)<br>
 This means that the website is successfully running on the local machine. Copy and pasting the link into the search bar of your browser will help you launch the web application on your local machine.
  
+ADDITIONAL FEATURES
+----------------------------
+Human Start and AI start
+-------------------------
+Once the user has clicked on the "Let's Play" button on the pop up appearing the home screen - prompting them to enter their details and to leave a message - they are lead to the game screen. Here, the user has a choice between the choice of levels and then between "AI start" and "Human start"; which will decide who will make the firs move.<br>
+![](screencasts/humanstart.gif)<br>
+The above GIF shows an instance of the player starting the game.
+
+
 Viewing the database page
 ---------------------------
 The database makes use of emails as a unique key identifier which allows it to maintain the scores for the returning users. Upon successfully running the website on your local machine, typing the following into the search bar of your browser will display the database page. <br>
