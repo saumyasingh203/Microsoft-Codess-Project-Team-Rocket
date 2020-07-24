@@ -6,6 +6,7 @@ TABLE OF CONTENTS
 * Introduction
 * Product Description
 * Technologies
+* Flowchart
 * Setup, Installation and Launch 
 * User Journey
 * Support <br>
@@ -38,6 +39,10 @@ The project has been created with the use of:
 * Python
 * jQuery
 * MongoDB
+
+FLOWCHART
+-----------
+![](screencasts/flow.png)<br>
  
 LAUNCH
 -------
