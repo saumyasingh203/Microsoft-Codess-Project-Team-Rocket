@@ -78,13 +78,12 @@ This will allow the user to view the comments left behind by the visitors along 
 
 USER JOURNEY
 ---------------
-The GIF given below will help the user navigate through the web application with ease.<br>
-![](screencasts/wking1.gif)
+The GIF given below can act as a visual guid help the user navigate through the web application with ease.<br>
+![](screencaasts/workingfinal.gif)
 
-The above GIF acts as a visual guide to help show the user how to navigate through the application.
 
-In the previous demonstration, we see that a player playing at depth level 1 has a greater chance of winning the game, the instance given below shows that such is not to be the case when playing at the maximum depth (it is **_easier_** to beat the AI at **_level 1_** as opposed to the **_maximum_** depth).<br>
-![](screencasts/maxlvl.gif)<br>
+In the previous demonstration, we see that a player playing against the AI at the max depth has a greater chance of losing or tying the game. The instance given below shows that such is not to be the case when playing at a level 1 depth (for it is **_easier_** to beat the AI at **_level 1_** as opposed to the **_maximum_** depth).<br>
+![](screencasts/level1working.gif)<br>
 
 SUPPORT
 ---------
