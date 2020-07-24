@@ -42,7 +42,7 @@ The project has been created with the use of:
 
 FLOWCHART
 -----------
-![](screencasts/flow.png)<br>
+![](screencasts/flow1.png)<br>
  
 LAUNCH
 -------
