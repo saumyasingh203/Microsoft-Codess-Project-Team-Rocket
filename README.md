@@ -62,19 +62,21 @@ This means that the website is successfully running on the local machine. Copy a
  
 Viewing the database page
 ---------------------------
-Upon successfully running the website on your local machine, typing the following into the search bar of your browser will display the database page. <br>
+The database makes use of emails as a unique key identifier which allows it to maintain the scores for the returning users. Upon successfully running the website on your local machine, typing the following into the search bar of your browser will display the database page. <br>
 ```localhost:5000/database```<br>
 This will allow the user to view the comments left behind by the visitors along with their scores. The data stored in the database is then displayed as follows:<br>
 ![](screencasts/dbpage.JPG)
 
 USER JOURNEY
 ---------------
-The GIF given below will help the user navigate through the web application with ease.
+The GIF given below will help the user navigate through the web application with ease.<br>
+![](screencasts/wking1.gif)
 
-A visual guide to help show the user how to navigate through the application.
+The above GIF acts as a visual guide to help show the user how to navigate through the application.
 
-In the previous demonstration, we see that a player playing at depth 1 has a greater chance of winning the game, the instance given below shows that such is not to be the case when playing at the maximum depth.
+In the previous demonstration, we see that a player playing at depth level 1 has a greater chance of winning the game, the instance given below shows that such is not to be the case when playing at the maximum depth (it is **_easier_** to beat the AI at **_level 1_** as opposed to the **_maximum_** depth).<br>
+![](screencasts/maxlvl.gif)<br>
 
 SUPPORT
 ---------
-For any queries or problems that may arise with regards to the project, the authors can be contacted at codessteamrocket@gmail.com
+For any queries or problems that might arise with regards to the project, the authors can be contacted at codessteamrocket@gmail.com
