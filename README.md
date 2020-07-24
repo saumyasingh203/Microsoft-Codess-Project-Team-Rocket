@@ -41,7 +41,7 @@ The project has been created with the use of:
  
 LAUNCH
 -------
-Visit (insert link!!!!!) to access the deployed game.
+Visit https://microsoft-team-rocket.herokuapp.com to access the deployed game.
 
 Setup and Installation
 ------------------------
