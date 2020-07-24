@@ -64,9 +64,9 @@ ADDITIONAL FEATURES
 ----------------------------
 Human Start and AI start
 -------------------------
-Once the user has clicked on the "Let's Play" button on the pop up appearing the home screen - prompting them to enter their details and to leave a message - they are lead to the game screen. Here, the user has a choice between the choice of levels and then between "AI start" and "Human start"; which will decide who will make the firs move.<br>
+Once the user has clicked on the "Let's Play" button on the pop up appearing the home screen - prompting them to enter their details and to leave a message - they are lead to the game screen. Here, the user has a choice between the choice of levels and then between "AI start" and "Human start"; which will decide who will make the first move.<br>
 ![](screencasts/humanstart.gif)<br>
-The above GIF shows an instance of the player starting the game.
+The above GIF shows an instance of the player making the first move.
 
 
 Viewing the database page
@@ -78,9 +78,8 @@ This will allow the user to view the comments left behind by the visitors along 
 
 USER JOURNEY
 ---------------
-The GIF given below can act as a visual guid help the user navigate through the web application with ease.<br>
-![](screencaasts/workingfinal.gif)
-
+The GIF given below can act as a visual guide help the user navigate through the web application with ease.<br>
+![](screencasts/workingfinal.gif)<br>
 
 In the previous demonstration, we see that a player playing against the AI at the max depth has a greater chance of losing or tying the game. The instance given below shows that such is not to be the case when playing at a level 1 depth (for it is **_easier_** to beat the AI at **_level 1_** as opposed to the **_maximum_** depth).<br>
 ![](screencasts/level1working.gif)<br>
