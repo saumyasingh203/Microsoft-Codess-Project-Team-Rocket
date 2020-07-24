@@ -46,6 +46,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-image: url('/static/images/pokem.png');
+	background-size: cover;
 }
 
 #header {
@@ -99,7 +100,7 @@ a:visited {
 	padding: 5px;
 	font-size: 4em;
 	font-family: Sans;
-	color: #444;
+	color: black;
 	background: #F8F8F8;
 	width: 350px;
 	height: 340px;
@@ -259,12 +260,10 @@ a:visited {
 { 
 	float: right;
 	margin-right: 0px;
-
 	box-shadow:4px 4px 4px rgba(0, 0, 0, 0.25);
-	background-image: url('/static/images/pokem.png');
 	opacity:1;
 	width: 860px;
-	height: 704px;
+	height: 734px;
 }
 
 #sideCol { 
@@ -273,7 +272,7 @@ a:visited {
 	background-color:#7fb4f18e;
 	opacity:1;
 	width:400px;
-	height:704px;
+	height:734px;
 }
 
 

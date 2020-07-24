@@ -9,27 +9,10 @@
 $.getJSON("/scores").then((data) => {
     scores = data;
     console.log(scores, scores.length)
-    //   console.log(scores);
   });
   $.getJSON("/get-user").then((data) => {
-    //   console.log(data["email"]);
     currentUser = data;
-    //   console.log(data);
-    //   console.log(currentUser);
     score = data["score"];
-    //   console.log(parseInt(score));
-    //   newscore = parseInt(score) + 400;
-    //   console.log(newscore);
-    //   console.log(currentUser);
-  
-    ////testing if code works
-    //   $.post("update-score", {
-    //     name: currentUser.name + "a",
-    //     email: currentUser.email,
-    //     score: newscore,
-    //     message: currentUser.message,
-    //   });
-    ////success
   });
 
 function checkscore() {
@@ -53,7 +36,19 @@ function level_click(thisid) {
 
     console.log('/level' + thisid);
 
-    $.getJSON('/level' + thisid, {}, {});
+    $.getJSON('/level' + thisid, {}, {
+
+    });
+    // $.getJSON('/level' + thisid, {},
+    //     function (data) {
+    //         console.log(data.result);
+    //         for (var i = 1; i <= 9; i++) {
+    //             cell = document.getElementById(String(i));
+    //             cell.style.color = "black";
+    //             cell.innerHTML = data.result[i];
+    //         }
+    //         document.getElementById("message").innerHTML = "";
+    //     });
 
 }
 
@@ -63,25 +58,34 @@ function startwith(thisid)
     document.querySelector("#s1").classList.remove("pressedStart");
     document.querySelector("#s2").classList.remove("pressedStart");
     document.querySelector("#s" + thisid).classList.add("pressedStart");
-
-    if (thisid == 1) {
+    if (thisid == 1)
+    {
+        console.log(thisid);
         $.getJSON('/startAI', {},
-           function (data) {
-            for (var i = 1; i <= 9; i++) {
-                cell = document.getElementById(String(i));
-                cell.innerHTML = data.board[i];
-            }
-          });
-                  
+            function (data) {
+                console.log(data.result);
+                for (var i = 1; i <= 9; i++) {
+                    cell = document.getElementById(String(i));
+                    cell.style.color = "black";
+                    cell.innerHTML = data.result[i];
+                }
+                document.getElementById("message").innerHTML = "";
+                reply_click(1);
+            });
     }
-    else {
+    if (thisid == 2)
+    {
+        console.log(thisid);
         $.getJSON('/startHuman', {},
-                   function (data) {
-            for (var i = 1; i <= 9; i++) {
-                cell = document.getElementById(String(i));
-                cell.innerHTML = data.board[i];
-            }
-          });
+            function (data) {
+                console.log(data.result);
+                for (var i = 1; i <= 9; i++) {
+                    cell = document.getElementById(String(i));
+                    cell.style.color = "black";
+                    cell.innerHTML = data.result[i];
+                }
+                document.getElementById("message").innerHTML = "";
+            });
     }
 
 
@@ -93,6 +97,11 @@ function reply_click(thisid) {
     console.log(thisid);
     // cell = document.getElementById(String(thisid));
     // cell.innerHTML = "O";
+
+    if (document.getElementById(String(thisid)).innerHTML == 'X')
+        return;
+    if (document.getElementById(String(thisid)).innerHTML == 'O')
+        return;
 
     $.getJSON('/number' + thisid, {},
         function (data) {

@@ -1,14 +1,18 @@
 import random
-from flask import Flask, request, render_template, jsonify, json, redirect
+from flask import Flask, request, render_template, jsonify, json, redirect, session
+from flask_session import Session
 import pymongo
 client = pymongo.MongoClient("mongodb+srv://tictac:12345@cluster0.rqmzw.mongodb.net/tictac?retryWrites=true&w=majority")
 db = client.test
 # print(db)
 users = db.users
 currentUser = {}
+app = Flask(__name__)
 
-board = [' '] * 10
-turnNumber = 0
+app.secret_key="lol"
+
+session['board'] = [' '] * 10
+session['turnNumber'] = 0
 isWinner = 0
 win = [0, 0, 0]
 level=0
@@ -34,10 +38,13 @@ def addUpdateUser(name, email, message, score = 0):
     print(currentUser)
     
 def update_AI():
+    global board
+    board=session['board']
     global turn
     turn = 'computer'
-    global board
     board = [' '] * 10
+    # move = Random_Move(board, [7, 9, 1, 3])
+    # make_move(board, 'O', move)
     global turnNumber
     turnNumber = 0
     global isWinner
@@ -46,11 +53,14 @@ def update_AI():
     win = [0, 0, 0]
     global status
     status=2
+    session['board']=board
+    return board
     
 def update_human():
+    global board
+    board=session['board']
     global turn
     turn = 'player'
-    global board
     board = [' '] * 10
     global turnNumber
     turnNumber = 0
@@ -60,6 +70,8 @@ def update_human():
     win = [0, 0, 0]
     global status
     status=2
+    session['board']=board
+    return board
     
 
 def ChooseLetter():
@@ -67,12 +79,14 @@ def ChooseLetter():
 
 
 def make_move(board, letter, move):
+    board=session['board']
     if Space_Free(board, move):#?
         board[move] = letter
 
 
 def check_winner(bo, le):
 #rows check
+    board=session['board']
     return ((bo[7] == le and bo[8] == le and bo[9] == le) or 
     (bo[4] == le and bo[5] == le and bo[6] == le) or 
     (bo[1] == le and bo[2] == le and bo[3] == le) or #columns check
@@ -86,6 +100,7 @@ def update_winner(bo, le):
 #rows check
     global win
     global isWinner
+    board=session['board']
     if (bo[7] == le and bo[8] == le and bo[9] == le) :
         win = [7, 8, 9]
         isWinner = 1
@@ -122,6 +137,7 @@ def update_winner(bo, le):
    
 
 def board_copy(board):
+    board=session['board']
     dupeBoard = []
 
     for i in board:
@@ -130,12 +146,14 @@ def board_copy(board):
     return dupeBoard
 
 def Space_Free(board, move):
+    board=session['board']
     if board[move] == ' ':
         return True
     else:
         return False
     
 def Player_Move(board):
+    board=session['board']
     #print ("Choose a place")
     move = 0
     while not (move > 0 and move < 10) or not Space_Free(board, move):
@@ -143,6 +161,7 @@ def Player_Move(board):
     return move
 
 def Random_Move(board, moves): #This function randomly chooses a spot from the list of possible spots provided, can be customized to make easy levels
+    board=session['board']
     available_moves = []
     for i in moves: 
         if Space_Free(board, i):
@@ -154,6 +173,7 @@ def Random_Move(board, moves): #This function randomly chooses a spot from the l
         return None
     
 def move_l4(board, computer_letter,First_Player, tn):
+    board=session['board']
     if computer_letter == 'X':
         players_letter = 'O'
     else:
@@ -197,11 +217,13 @@ def move_l4(board, computer_letter,First_Player, tn):
         return move
     
 def move_l1(board, computer_letter):
+    board=session['board']
     move = Random_Move(board, [1, 2, 3, 4, 5, 6, 7, 8, 9])
     if move != None:
         return move
 
 def move_l2(board, computer_letter):
+    board=session['board']
     if computer_letter == 'X':
         players_letter = 'O'
     else:
@@ -224,6 +246,7 @@ def move_l2(board, computer_letter):
         return move
 
 def move_l3(board, computer_letter):
+    board=session['board']
     if computer_letter == 'X':
         players_letter = 'O'
     else:
@@ -253,6 +276,7 @@ def move_l3(board, computer_letter):
         return move
 
 def get_move_draft(board, computer_letter, First_Player, tn, difficulty):
+    board=session['board']
     if difficulty == 1:
         move = move_l1(board, computer_letter)
         return move
@@ -268,18 +292,21 @@ def get_move_draft(board, computer_letter, First_Player, tn, difficulty):
 
 
 def board_full(board):
+    board=session['board']
     for i in range(1, 10):
         if Space_Free(board, i):
             return False
     return True
 
 def update_turn(turnNumber):
+    board=session['board']
     turnNumber += 1
     return turnNumber
 
 ##main function##
 
 def ttt(place):    
+    board=session['board']
     player_letter, computer_letter = ChooseLetter()
 
     if check_winner(board, computer_letter):
@@ -321,22 +348,24 @@ def ttt(place):
                 return(board)
             else:
                 turn = 'player'
+                session['board']=board
                 return(board)
 
 
         #break
         
-app = Flask(__name__)
+
 
 @app.route('/')
-def home():
+def home(methods = ['GET','POST']):
     return render_template('main.html')
 
-@app.route('/index')
+@app.route('/index', methods = ['GET','POST'])
 def playSwitch():
-    return render_template('index.html')
+    update_human()
+    return render_template('index.html'])
 
-@app.route('/scores')
+@app.route('/scores', methods = ['GET','POST'])
 def getScores():
     print (users.estimated_document_count())
     l = [{"name":x['name'],"score": x['score']} for x in users.find().sort('score', -1)]
@@ -354,13 +383,13 @@ def bindUser():
         addUpdateUser(name, email, message, score)
         return redirect('index')
 
-@app.route('/get-user')
+@app.route('/get-user', methods = ['GET','POST'])
 def getUser():
     # print("The current user is:", currentUser)
     return json.dumps(currentUser)
     
 
-@app.route('/update-score', methods = ['POST'])
+@app.route('/update-score', methods = ['GET','POST'])
 def updateScore():
     if request.method == "POST":
         name = request.form['name']
@@ -371,11 +400,11 @@ def updateScore():
         return "done"
 
 
-@app.route('/database')
+@app.route('/database', methods = ['GET','POST'])
 def getDB():
     return render_template('database.html')
 
-@app.route('/get-user-data')
+@app.route('/get-user-data', methods = ['GET','POST'])
 def getDBData():
     data =  [x for x in users.find({}, {"_id":0})]
     return json.dumps(data)
@@ -479,37 +508,36 @@ def number9():
 def level1():
     global level
     level = 1
-    return jsonify(board)
+    return jsonify(result=board)
 
 @app.route('/level2', methods = ['GET','POST'])
 def level2():
     global level
     level = 2
-    return jsonify(board)
+    return jsonify(result=board)
     
 @app.route('/level3', methods = ['GET','POST'])
 def level3():
     global level
     level = 3
-    return jsonify(board)
+    return jsonify(result=board)
     
 @app.route('/level4', methods = ['GET','POST'])
 def level4():
     global level
     level = 4
-    return jsonify(board)
+    return jsonify(result=board)
 
 ##AI start and Human Start##
 @app.route('/startAI', methods = ['GET','POST'])
 def startAI():
-    update_AI()
-    return jsonify(board)
+    answer=update_AI()
+    return jsonify(result=answer)
 
 @app.route('/startHuman', methods = ['GET','POST'])
 def startHuman():
-    update_human()
-    return jsonify(board)
-
+    answer=update_human()
+    return jsonify(result=answer)
 
 if __name__ == '__main__':
     app.run(debug=True)

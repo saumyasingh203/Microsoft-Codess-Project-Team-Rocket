@@ -1,7 +1,7 @@
 
 
-@bg: #2d2d37; // Dark blue
-@primary: #fd6b21; // Orange
+@bg: #2d2d37;
+@primary: #fd6b21; 
 
 
 
@@ -88,7 +88,13 @@
 /**********************************MAIN.HTML***************************************************** */
 
 body{
-	background-image: url(/static/images/pokem.png);
+  margin: 0;
+  padding: 0;
+  height: 900px;
+  width: 100%;
+  background-image: url(/static/images/pokem.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* .main-div{
@@ -123,6 +129,7 @@ header{
 }
 
 #play-button{
+  position: absolute;
   cursor: pointer;
 	margin-top:100px;
 	margin-left:800px;
@@ -262,12 +269,6 @@ header{
 @import url(https://fonts.googleapis.com/css?family=Sniglet|Raleway:900);
 
 
-body, html{
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: 'Sniglet', cursive;
-}
 h1{
     font-weight: normal;
     font-size: 4em;
