@@ -68,7 +68,7 @@ Once the user has clicked on the "Let's Play" button on the pop up appearing the
 The below given GIF shows an instance of the player making the first move. <br>
 ![](screencasts/humanstartsample.gif)<br>
 
-In comparision to the above given GIF, the one given below shows an instanc eof the Team Rocket AI making the first move.<br>
+In comparision to the above given GIF, the one given below shows an instance of the Team Rocket AI making the first move.<br>
 ![](screencasts/aistartsample.gif)
 
 Leaderboard Database 
