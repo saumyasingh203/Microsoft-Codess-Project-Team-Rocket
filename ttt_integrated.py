@@ -11,8 +11,8 @@ app = Flask(__name__)
 
 app.secret_key="lol"
 
-session['board'] = [' '] * 10
-session['turnNumber'] = 0
+board = [' '] * 10
+turnNumber = 0
 isWinner = 0
 win = [0, 0, 0]
 level=0
@@ -39,7 +39,7 @@ def addUpdateUser(name, email, message, score = 0):
     
 def update_AI():
     global board
-    board=session['board']
+    # board=session['board']
     global turn
     turn = 'computer'
     board = [' '] * 10
@@ -53,12 +53,12 @@ def update_AI():
     win = [0, 0, 0]
     global status
     status=2
-    session['board']=board
+    # session['board']=board
     return board
     
 def update_human():
     global board
-    board=session['board']
+    # board=session['board']
     global turn
     turn = 'player'
     board = [' '] * 10
@@ -70,7 +70,7 @@ def update_human():
     win = [0, 0, 0]
     global status
     status=2
-    session['board']=board
+    # session['board']=board
     return board
     
 
@@ -79,14 +79,14 @@ def ChooseLetter():
 
 
 def make_move(board, letter, move):
-    board=session['board']
+    # board=session['board']
     if Space_Free(board, move):#?
         board[move] = letter
 
 
 def check_winner(bo, le):
 #rows check
-    board=session['board']
+    # board=session['board']
     return ((bo[7] == le and bo[8] == le and bo[9] == le) or 
     (bo[4] == le and bo[5] == le and bo[6] == le) or 
     (bo[1] == le and bo[2] == le and bo[3] == le) or #columns check
@@ -100,7 +100,7 @@ def update_winner(bo, le):
 #rows check
     global win
     global isWinner
-    board=session['board']
+    # board=session['board']
     if (bo[7] == le and bo[8] == le and bo[9] == le) :
         win = [7, 8, 9]
         isWinner = 1
@@ -137,7 +137,7 @@ def update_winner(bo, le):
    
 
 def board_copy(board):
-    board=session['board']
+    # board=session['board']
     dupeBoard = []
 
     for i in board:
@@ -146,14 +146,14 @@ def board_copy(board):
     return dupeBoard
 
 def Space_Free(board, move):
-    board=session['board']
+    # board=session['board']
     if board[move] == ' ':
         return True
     else:
         return False
     
 def Player_Move(board):
-    board=session['board']
+    # board=session['board']
     #print ("Choose a place")
     move = 0
     while not (move > 0 and move < 10) or not Space_Free(board, move):
@@ -161,7 +161,7 @@ def Player_Move(board):
     return move
 
 def Random_Move(board, moves): #This function randomly chooses a spot from the list of possible spots provided, can be customized to make easy levels
-    board=session['board']
+    # board=session['board']
     available_moves = []
     for i in moves: 
         if Space_Free(board, i):
@@ -173,7 +173,7 @@ def Random_Move(board, moves): #This function randomly chooses a spot from the l
         return None
     
 def move_l4(board, computer_letter,First_Player, tn):
-    board=session['board']
+    # board=session['board']
     if computer_letter == 'X':
         players_letter = 'O'
     else:
@@ -217,13 +217,13 @@ def move_l4(board, computer_letter,First_Player, tn):
         return move
     
 def move_l1(board, computer_letter):
-    board=session['board']
+    # board=session['board']
     move = Random_Move(board, [1, 2, 3, 4, 5, 6, 7, 8, 9])
     if move != None:
         return move
 
 def move_l2(board, computer_letter):
-    board=session['board']
+    # board=session['board']
     if computer_letter == 'X':
         players_letter = 'O'
     else:
@@ -246,7 +246,7 @@ def move_l2(board, computer_letter):
         return move
 
 def move_l3(board, computer_letter):
-    board=session['board']
+    # board=session['board']
     if computer_letter == 'X':
         players_letter = 'O'
     else:
@@ -276,7 +276,7 @@ def move_l3(board, computer_letter):
         return move
 
 def get_move_draft(board, computer_letter, First_Player, tn, difficulty):
-    board=session['board']
+    # board=session['board']
     if difficulty == 1:
         move = move_l1(board, computer_letter)
         return move
@@ -292,21 +292,21 @@ def get_move_draft(board, computer_letter, First_Player, tn, difficulty):
 
 
 def board_full(board):
-    board=session['board']
+    # board=session['board']
     for i in range(1, 10):
         if Space_Free(board, i):
             return False
     return True
 
 def update_turn(turnNumber):
-    board=session['board']
+    # board=session['board']
     turnNumber += 1
     return turnNumber
 
 ##main function##
 
 def ttt(place):    
-    board=session['board']
+    # board=session['board']
     player_letter, computer_letter = ChooseLetter()
 
     if check_winner(board, computer_letter):
@@ -348,7 +348,7 @@ def ttt(place):
                 return(board)
             else:
                 turn = 'player'
-                session['board']=board
+                # session['board']=board
                 return(board)
 
 
@@ -363,7 +363,7 @@ def home(methods = ['GET','POST']):
 @app.route('/index', methods = ['GET','POST'])
 def playSwitch():
     update_human()
-    return render_template('index.html'])
+    return render_template('index.html')
 
 @app.route('/scores', methods = ['GET','POST'])
 def getScores():
